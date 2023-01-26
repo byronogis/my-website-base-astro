@@ -1,18 +1,14 @@
 ---
-
+const { size } = Astro.props
 ---
 
 <div class="out">
   <div class="in"></div>
 </div>
 
-<style>
+<style define:vars={{ size }}>
   .out {
-    --size: 50px;
-    --color-light: #ffffff;
-    --color-dark: #262626;
-  }
-  .out {
+    display: inline-block;
     width: var(--size);
     height: calc(var(--size)*0.5);
     padding: calc(var(--size)*0.1);
@@ -21,7 +17,7 @@
     box-sizing: border-box;
     cursor: pointer;
     line-height: calc(var(--size)*0.3);
-    transition: padding-left 1s;
+    transition: padding-left .3s ease-out;
   }
   .out .in {
     display: inline-block;
@@ -30,10 +26,11 @@
     border-radius: var(--size);
     background-color: var(--color-light);
   }
-  .out.dark {
+  html.dark .out {
+    padding-left: calc(var(--size)*0.6);
     background-color: var(--color-light);
   }
-  .out.dark .in {
+  html.dark .out .in {
     background-color: var(--color-dark);
   }
 </style>
