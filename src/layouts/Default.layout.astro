@@ -10,13 +10,30 @@ import TheFooter from '../components/TheFooter.astro';
     <title>网站</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
-  <body>
+  <body class="min-h-screen">
     <TheHeader></TheHeader>
 
-    <article>
-      <slot /> <!-- 你的内容会被插入到这里 -->
-    </article>
+    <main>
+      <article>
+        <slot /> <!-- 你的内容会被插入到这里 -->
+      </article>
+    </main>
 
     <TheFooter></TheFooter>
   </body>
 </html>
+
+<style>
+  body {
+    display: grid;
+    grid-template-areas:
+      "header"
+      "main"
+      "footer";
+    grid-template-rows: 5em minmax(0, 1fr) 5em;
+    grid-template-columns: minmax(0, 1fr);
+  }
+  main {
+    grid-area: main;
+  }
+</style>

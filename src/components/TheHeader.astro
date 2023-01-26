@@ -3,7 +3,7 @@ import { SITE_NAV } from '../site.config.mjs'
 import SwitchButton from './SwitchButton.astro';
 ---
 
-<header >
+<header class="flex justify-between items-center">
   <nav>
     {SITE_NAV.map(({ url, text }) => (<a href={url}>{text}</a>))}
   </nav>
@@ -12,3 +12,9 @@ import SwitchButton from './SwitchButton.astro';
     <SwitchButton size="50px"></SwitchButton>
   </div>
 </header>
+
+<style>
+  header {
+    grid-area: header;
+  }
+</style>
