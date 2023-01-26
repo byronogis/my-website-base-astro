@@ -1,0 +1,14 @@
+---
+const {frontmatter} = Astro.props;
+// console.log(frontmatter)
+---
+<html>
+   <!-- ... -->
+  <h1>{frontmatter.title}</h1>
+  <h2>文章作者：{frontmatter.author}</h2>
+  <p>更新时间：{frontmatter.update || frontmatter.date}</p>
+  <p>-- start --</p>
+  <slot />
+   <!-- ... -->
+  <p>-- End --</p>
+</html>

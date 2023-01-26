@@ -1,0 +1,39 @@
+---
+
+---
+
+<div class="out">
+  <div class="in"></div>
+</div>
+
+<style>
+  .out {
+    --size: 50px;
+    --color-light: #ffffff;
+    --color-dark: #262626;
+  }
+  .out {
+    width: var(--size);
+    height: calc(var(--size)*0.5);
+    padding: calc(var(--size)*0.1);
+    border-radius: var(--size);
+    background-color: var(--color-dark);
+    box-sizing: border-box;
+    cursor: pointer;
+    line-height: calc(var(--size)*0.3);
+    transition: padding-left 1s;
+  }
+  .out .in {
+    display: inline-block;
+    width: calc(var(--size)*0.3);
+    height: calc(var(--size)*0.3);
+    border-radius: var(--size);
+    background-color: var(--color-light);
+  }
+  .out.dark {
+    background-color: var(--color-light);
+  }
+  .out.dark .in {
+    background-color: var(--color-dark);
+  }
+</style>

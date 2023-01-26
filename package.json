@@ -1,0 +1,30 @@
+{
+  "name": "astro-demo",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "main": "index.js",
+  "engines": {
+    "node": ">=16.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "@astrojs/netlify": "^2.0.0",
+    "astro": "^2.0.1"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.34.1",
+    "@unocss/astro": "^0.49.0",
+    "@unocss/preset-uno": "^0.49.0",
+    "eslint": "^8.32.0",
+    "eslint-plugin-astro": "^0.23.0"
+  }
+}
