@@ -9,7 +9,7 @@ const essays = await getCollection('essay')
     {essays.map(essay => (
       <li
         data-slug={essay.slug}
-        class="flex justify-between items-center"
+        class="flex justify-between items-start"
       >
         <a
           class="unset hover"
