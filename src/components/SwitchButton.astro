@@ -24,7 +24,7 @@ const { size } = Astro.props
     height: calc(var(--size)*0.5);
     padding: calc(var(--size)*0.1);
     border-radius: var(--size);
-    background-color: var(--color-dark);
+    background-color: var(--color-primary-main);
     box-sizing: border-box;
     cursor: pointer;
     line-height: calc(var(--size)*0.3);
@@ -34,13 +34,9 @@ const { size } = Astro.props
     width: calc(var(--size)*0.3);
     height: calc(var(--size)*0.3);
     border-radius: var(--size);
-    background-color: var(--color-light);
+    background-color: var(--color-bg-body);
   }
   html.dark .out {
     padding-left: calc(var(--size)*0.6);
-    background-color: var(--color-light);
-  }
-  html.dark .out .in {
-    background-color: var(--color-dark);
   }
 </style>
