@@ -50,7 +50,8 @@ a:not(.unset) {
         linear-gradient(to right, var(--color-text-link), var(--color-text-link));
 }
 
-a:not(.unset):hover {
+a:not(.unset):hover,
+a:where(.hover):hover {
     color: var(--color-text-link);
 }
 

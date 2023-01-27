@@ -1,0 +1,18 @@
+---
+import { getCollection } from 'astro:content'
+import DefaultLayout from '../layouts/Default.layout.astro'
+
+const Essays = await getCollection('essays')
+---
+<DefaultLayout>
+  <ul>
+    {Essays.map(essay => (
+      <li data-slug={essay.slug}>
+        <a
+          class="unset hover"
+          href={`/essays/${essay.slug}`}
+        >{essay.data.title}</a>
+      </li>
+    ))}
+  </ul>
+</DefaultLayout>
