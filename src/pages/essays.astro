@@ -7,11 +7,22 @@ const Essays = await getCollection('essays')
 <DefaultLayout>
   <ul>
     {Essays.map(essay => (
-      <li data-slug={essay.slug}>
+      <li
+        data-slug={essay.slug}
+        class="flex justify-between items-center"
+      >
         <a
           class="unset hover"
           href={`/essays/${essay.slug}`}
         >{essay.data.title}</a>
+
+        <span
+          class="italic"
+          style="color: var(--color-text-muted);"
+        >{
+          new Date(essay.data.date).toLocaleDateString()
+          || '无'
+        }</span>
       </li>
     ))}
   </ul>
