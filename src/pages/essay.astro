@@ -1,29 +1,10 @@
 ---
 import { getCollection } from 'astro:content'
 import DefaultLayout from '../layouts/Default.layout.astro'
+import EssayList from '../components/EssayList.astro'
 
 const essays = await getCollection('essay')
 ---
 <DefaultLayout>
-  <ul>
-    {essays.map(essay => (
-      <li
-        data-slug={essay.slug}
-        class="flex justify-between items-start"
-      >
-        <a
-          class="unset hover"
-          href={`/essay/detail/${essay.slug}`}
-        >{essay.data.title}</a>
-
-        <span
-          class="italic"
-          style="color: var(--color-text-muted);"
-        >{
-          new Date(essay.data.date).toLocaleDateString()
-          || '无'
-        }</span>
-      </li>
-    ))}
-  </ul>
+  <EssayList essays={essays}></EssayList>
 </DefaultLayout>
