@@ -1,11 +1,14 @@
 ---
 import { SITE_NAV } from '../site.config.mjs'
-import SwitchButton from './SwitchButton.astro';
+import SwitchButton from './SwitchButton.astro'
+import HeaderLink from './HeaderLink.astro';
 ---
 
 <header class="flex justify-between items-center">
   <nav>
-    {SITE_NAV.map(({ url, text }) => (<a href={url}>{text}</a>))}
+    {SITE_NAV.map(({ url, text }) => (
+      <HeaderLink href={url}>{text}</HeaderLink>
+    ))}
   </nav>
 
   <div>
