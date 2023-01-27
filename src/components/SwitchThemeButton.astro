@@ -2,20 +2,20 @@
 const { size } = Astro.props
 ---
 
-<script>
- const btn = document.querySelector('.switch-theme-button')
- btn.addEventListener('click', () => {
-   const classList = document.documentElement.classList
-   if (classList.contains('dark'))
-     classList.remove('dark')
-   else
-     classList.add('dark')
- })
-</script>
-
 <div class="out switch-theme-button">
   <div class="in"></div>
 </div>
+
+<script>
+  const btn = document.querySelector('.switch-theme-button')
+  btn.addEventListener('click', () => {
+    const classList = document.documentElement.classList
+    if (classList.contains('dark'))
+      classList.remove('dark')
+    else
+      classList.add('dark')
+  })
+</script>
 
 <style define:vars={{ size }}>
   .out {
