@@ -2,18 +2,18 @@
 import { getCollection } from 'astro:content'
 import DefaultLayout from '../layouts/Default.layout.astro'
 
-const Essays = await getCollection('essays')
+const essays = await getCollection('essay')
 ---
 <DefaultLayout>
   <ul>
-    {Essays.map(essay => (
+    {essays.map(essay => (
       <li
         data-slug={essay.slug}
         class="flex justify-between items-center"
       >
         <a
           class="unset hover"
-          href={`/essays/detail/${essay.slug}`}
+          href={`/essay/detail/${essay.slug}`}
         >{essay.data.title}</a>
 
         <span

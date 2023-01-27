@@ -10,5 +10,5 @@ const essayCollection = defineCollection({
 })
 
 export const collections = {
-  essays: essayCollection,
+  essay: essayCollection,
 }

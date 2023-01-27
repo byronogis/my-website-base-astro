@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content'
 import DefaultLayout from '../../../layouts/Default.layout.astro'
 
 export async function getStaticPaths() {
-  const essayEntries = await getCollection('essays')
+  const essayEntries = await getCollection('essay')
 
   const tagsMap = essayEntries.reduce((acc, cur) => {
     cur.data.tags.forEach((tag) => {
@@ -19,19 +19,18 @@ export async function getStaticPaths() {
   }))
 }
 
-const { entries } = Astro.props
-const Essays = entries
+const { entries: essays } = Astro.props
 ---
 <DefaultLayout>
   <ul>
-    {Essays.map(essay => (
+    {essays.map(essay => (
       <li
         data-slug={essay.slug}
         class="flex justify-between items-center"
       >
         <a
           class="unset hover"
-          href={`/essays/detail/${essay.slug}`}
+          href={`/essay/detail/${essay.slug}`}
         >{essay.data.title}</a>
 
         <span

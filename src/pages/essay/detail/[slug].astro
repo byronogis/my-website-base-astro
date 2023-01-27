@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content'
 import DefaultLayout from '../../../layouts/Default.layout.astro'
 
 export async function getStaticPaths() {
-  const essayEntries = await getCollection('essays')
+  const essayEntries = await getCollection('essay')
   return essayEntries.map(entry => ({
     params: { slug: entry.slug },
     props: { entry },
