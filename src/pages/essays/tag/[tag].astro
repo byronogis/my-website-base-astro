@@ -1,8 +1,26 @@
 ---
 import { getCollection } from 'astro:content'
-import DefaultLayout from '../layouts/Default.layout.astro'
+import DefaultLayout from '../../../layouts/Default.layout.astro'
 
-const Essays = await getCollection('essays')
+export async function getStaticPaths() {
+  const essayEntries = await getCollection('essays')
+
+  const tagsMap = essayEntries.reduce((acc, cur) => {
+    cur.data.tags.forEach((tag) => {
+      acc[tag] || (acc[tag] = [])
+      acc[tag].push(cur)
+    })
+    return acc
+  }, {})
+
+  return Object.keys(tagsMap).map(tag => ({
+    params: { tag },
+    props: { entries: tagsMap[tag] },
+  }))
+}
+
+const { entries } = Astro.props
+const Essays = entries
 ---
 <DefaultLayout>
   <ul>
