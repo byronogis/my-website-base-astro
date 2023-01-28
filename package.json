@@ -20,7 +20,8 @@
     "@astrojs/netlify": "^2.0.0",
     "@unocss/reset": "^0.49.0",
     "astro": "^2.0.1",
-    "github-markdown-css": "^5.1.0"
+    "github-markdown-css": "^5.1.0",
+    "remark-toc": "^8.0.1"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.34.1",

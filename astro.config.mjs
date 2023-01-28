@@ -3,6 +3,9 @@ import { defineConfig } from 'astro/config'
 import UnoCSS from '@unocss/astro'
 import UnoCSSPresetUno from '@unocss/preset-uno'
 
+// remark plugin
+import remarkToc from 'remark-toc'
+
 // https://astro.build/config
 export default defineConfig({
   // 顶层配置项
@@ -41,7 +44,11 @@ export default defineConfig({
       langs: [], // 自定义语言（.astro 已内置
       wrap: true, // 换行以阻止水平滚动条
     }, // shiki 语法高亮配配置
-    // remarkPlugins: [],
+    remarkPlugins: [
+      [remarkToc, {
+        heading: 'toc|table[ -]of[ -]contents?|目录',
+      }],
+    ],
     // rehypePlugins: [],
     // extendDefaultPlugins: false, // 配置上面两个插件项时是否保留默认插件 astro@2.0.0 中舍弃并拆分为 gfm,smartypants
     gfw: true, // 显式定义内置插件启用与否，代替 extendDefaultPlugins --> Added in: astro@2.0.0 BETA
