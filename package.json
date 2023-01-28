@@ -1,6 +1,7 @@
 {
   "name": "astro-demo",
   "version": "1.0.0",
+  "packageManager": "pnpm@7.25.1",
   "description": "",
   "author": "",
   "license": "ISC",
