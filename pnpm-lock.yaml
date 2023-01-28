@@ -1,5 +1,10 @@
 lockfileVersion: 5.4
 
+patchedDependencies:
+  github-markdown-css@5.1.0:
+    hash: 3wcrzthnntiypm6ckithhrlsa4
+    path: patches/github-markdown-css@5.1.0.patch
+
 specifiers:
   '@antfu/eslint-config': ^0.34.1
   '@astrojs/netlify': ^2.0.0
@@ -9,11 +14,13 @@ specifiers:
   astro: ^2.0.1
   eslint: ^8.32.0
   eslint-plugin-astro: ^0.23.0
+  github-markdown-css: ^5.1.0
 
 dependencies:
   '@astrojs/netlify': 2.0.0_astro@2.0.1
   '@unocss/reset': 0.49.0
   astro: 2.0.1
+  github-markdown-css: 5.1.0_3wcrzthnntiypm6ckithhrlsa4
 
 devDependencies:
   '@antfu/eslint-config': 0.34.1_eslint@8.32.0
@@ -2667,6 +2674,11 @@ packages:
       call-bind: 1.0.2
       get-intrinsic: 1.2.0
     dev: true
+
+  /github-markdown-css/5.1.0_3wcrzthnntiypm6ckithhrlsa4:
+    resolution: {integrity: sha512-QLtORwHHtUHhPMHu7i4GKfP6Vx5CWZn+NKQXe+cBhslY1HEt0CTEkP4d/vSROKV0iIJSpl4UtlQ16AD8C6lMug==}
+    dev: false
+    patched: true
 
   /github-slugger/1.5.0:
     resolution: {integrity: sha512-wIh+gKBI9Nshz2o46B0B3f5k/W+WI9ZAv6y5Dn5WJ5SK1t0TnDimB4WE5rmTD05ZAIn8HALCZVmCsvj0w0v0lw==}

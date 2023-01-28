@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content'
 import DefaultLayout from '~/layouts/Default.layout.astro'
+import 'github-markdown-css'
 
 export async function getStaticPaths() {
   const essayEntries = await getCollection('essay')
@@ -15,5 +16,7 @@ const { Content } = await entry.render();
 ---
 <DefaultLayout>
   <h1>{entry.data.title}</h1>
-  <Content></Content>
+  <div class="markdown-body">
+    <Content></Content>
+  </div>
 </DefaultLayout>
