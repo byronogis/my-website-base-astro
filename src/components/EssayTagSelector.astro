@@ -1,0 +1,24 @@
+---
+import { getCollection } from 'astro:content'
+import BaseSelector from './BaseSelector.astro'
+
+const essays = await getCollection('essay')
+const essayTagSet = essays.reduce((acc, cur) => {
+  cur.data.tags.forEach(tag => acc.add(tag))
+  return acc
+}, new Set())
+---
+
+<BaseSelector
+  classExtra="essay-tag"
+  options={Array.from(essayTagSet)}
+></BaseSelector>
+
+<script>
+  const selector = document.querySelector('.base-selector.essay-tag')
+  selector.addEventListener('change', ({ target }: any) => {
+    const tag = target.value
+    const location = window.location
+    location.href = `${location.origin}/essay/tag/${tag}`
+  })
+</script>

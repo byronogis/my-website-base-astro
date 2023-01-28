@@ -1,0 +1,13 @@
+---
+const { options, classExtra } = Astro.props
+---
+
+<select
+  name="selector"
+  id="selector"
+  class:list={['base-selector', classExtra]}
+>
+  {options.map((option: string) => (
+    <option value={option}>{option}</option>
+  ))}
+</select>
