@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content'
-import DefaultLayout from '../../../layouts/Default.layout.astro'
+import DefaultLayout from '~/layouts/Default.layout.astro'
 
 export async function getStaticPaths() {
   const essayEntries = await getCollection('essay')
