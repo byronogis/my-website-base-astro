@@ -1,36 +1,5 @@
-:root {
-  --color-primary-main: #0f172a;
-  --color-text-body: #0f172a;
-  --color-text-heading: #0f172a;
-  --color-text-bold: #0f172a;
-  --color-text-muted: #64748b;
-  --color-text-link: #339af0;
-  --color-text-code: #000;
-  --color-text-selection: #000;
-
-  --color-bg-body: #fff;
-  --color-bg-code: #fef3c7;
-  --color-bg-selection: #e2e8f0;
-
-  --color-border-code: #f4f4f5;
-}
-
-:root.dark {
-  --color-primary-main: #fff;
-  --color-text-body: #e5e5e5;
-  --color-text-heading: #fff;
-  --color-text-bold: #fff;
-  --color-text-muted: #d4d4d4;
-  --color-text-link: #339af0;
-  --color-text-code: #fff;
-  --color-text-selection: #000;
-
-  --color-bg-body: #262626;
-  --color-bg-code: #eab308;
-  --color-bg-selection: #fff;
-
-  --color-border-code: #404040;
-}
+@import '@unocss/reset/normalize.css';
+@import './variable.css';
 
 :root {
   background-color: var(--color-bg-body);
