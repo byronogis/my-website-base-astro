@@ -7,13 +7,34 @@ const { size } = Astro.props
 </div>
 
 <script>
+  function updateHTMLTheme(mode: 'light' | 'dark') {
+    const classList = document.documentElement.classList
+    const themeColorMetaTag: HTMLMetaElement = document.head.querySelector('meta[name="theme-color"]')
+
+    if (mode === 'dark') {
+      classList.add('dark')
+      themeColorMetaTag && (themeColorMetaTag.content = '#262626')
+    }
+    else {
+      classList.remove('dark')
+      themeColorMetaTag && (themeColorMetaTag.content = '#ffffff')
+    }
+  }
+  function updateStorageTheme(mode: 'light' | 'dark') {
+    sessionStorage.setItem('theme', mode)
+  }
+
   const btn = document.querySelector('.switch-theme-button')
   btn.addEventListener('click', () => {
     const classList = document.documentElement.classList
-    if (classList.contains('dark'))
-      classList.remove('dark')
-    else
-      classList.add('dark')
+    if (classList.contains('dark')) {
+      updateHTMLTheme('light')
+      updateStorageTheme('light')
+    }
+    else {
+      updateHTMLTheme('dark')
+      updateStorageTheme('dark')
+    }
   })
 </script>
 
