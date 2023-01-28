@@ -7,11 +7,15 @@ const essayTagSet = essays.reduce((acc, cur) => {
   cur.data.tags.forEach(tag => acc.add(tag))
   return acc
 }, new Set())
+
+const pathArr = Astro.url.pathname.split('/')
+const currentTag = pathArr[2] === 'tag' ? pathArr[3] : undefined
 ---
 
 <BaseSelector
   classExtra="essay-tag"
   options={Array.from(essayTagSet)}
+  optionSelected={currentTag}
   placeholderText={'所有标签'}
 >
   <span>标签：</span>
@@ -20,10 +24,6 @@ const essayTagSet = essays.reduce((acc, cur) => {
 <script>
   const location = window.location
   const selector: HTMLSelectElement = document.querySelector('.base-selector .essay-tag')
-
-  const pathArr = location.pathname.split('/')
-  const isTagPage = location.pathname.split('/')[2] === 'tag'
-  isTagPage && (selector.value = pathArr[3])
 
   selector.addEventListener('change', ({ target }: any) => {
     if (target.value === 'non-select') {
