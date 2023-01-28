@@ -15,7 +15,8 @@ const { entry } = Astro.props
 const { Content } = await entry.render();
 ---
 <DefaultLayout>
-  <h1>{entry.data.title}</h1>
+  <h1 class="text-6 font-700 text-center">{entry.data.title}</h1>
+  <hr class="my-4" />
   <div class="markdown-body">
     <Content></Content>
   </div>
