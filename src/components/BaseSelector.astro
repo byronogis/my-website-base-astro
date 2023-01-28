@@ -13,7 +13,7 @@ const {
   <select
     name="selector"
     id="selector"
-    class:list={[classExtra]}
+    class:list={[classExtra, 'select-css']}
   >
     <option value="non-select">{placeholderText || '未选择'}</option>
     {options.map((option: string) => (

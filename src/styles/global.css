@@ -1,5 +1,6 @@
 @import '@unocss/reset/normalize.css';
 @import './variable.css';
+@import './reset-select-element.css';
 
 :root {
   background-color: var(--color-bg-body);
