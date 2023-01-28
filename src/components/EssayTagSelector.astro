@@ -12,13 +12,26 @@ const essayTagSet = essays.reduce((acc, cur) => {
 <BaseSelector
   classExtra="essay-tag"
   options={Array.from(essayTagSet)}
-></BaseSelector>
+  placeholderText={'所有标签'}
+>
+  <span>标签：</span>
+</BaseSelector>
 
 <script>
-  const selector = document.querySelector('.base-selector.essay-tag')
+  const location = window.location
+  const selector: HTMLSelectElement = document.querySelector('.base-selector .essay-tag')
+
+  const pathArr = location.pathname.split('/')
+  const isTagPage = location.pathname.split('/')[2] === 'tag'
+  isTagPage && (selector.value = pathArr[3])
+
   selector.addEventListener('change', ({ target }: any) => {
+    if (target.value === 'non-select') {
+      location.href = `${location.origin}/essay`
+      return
+    }
+
     const tag = target.value
-    const location = window.location
     location.href = `${location.origin}/essay/tag/${tag}`
   })
 </script>

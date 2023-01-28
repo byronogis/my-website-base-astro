@@ -1,13 +1,18 @@
 ---
-const { options, classExtra } = Astro.props
+const { options, classExtra, placeholderText } = Astro.props
 ---
 
-<select
-  name="selector"
-  id="selector"
-  class:list={['base-selector', classExtra]}
->
-  {options.map((option: string) => (
-    <option value={option}>{option}</option>
-  ))}
-</select>
+<div class="base-selector">
+  <slot></slot>
+
+  <select
+    name="selector"
+    id="selector"
+    class:list={[classExtra]}
+  >
+    <option value="non-select">{placeholderText || '未选择'}</option>
+    {options.map((option: string) => (
+      <option value={option}>{option}</option>
+    ))}
+  </select>
+</div>
