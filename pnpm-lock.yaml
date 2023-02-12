@@ -12,6 +12,7 @@ specifiers:
   '@unocss/preset-uno': ^0.49.4
   '@unocss/reset': ^0.49.4
   astro: ^2.0.10
+  dayjs: ^1.11.7
   eslint: ^8.34.0
   eslint-plugin-astro: ^0.23.0
   github-markdown-css: ^5.2.0
@@ -21,6 +22,7 @@ dependencies:
   '@astrojs/netlify': 2.1.2_astro@2.0.10
   '@unocss/reset': 0.49.4
   astro: 2.0.10
+  dayjs: 1.11.7
   github-markdown-css: 5.2.0_v7xsygtilvrg3gwps7qncsmztq
   remark-toc: 8.0.1
 
@@ -1649,6 +1651,10 @@ packages:
     engines: {node: '>=4'}
     hasBin: true
     dev: true
+
+  /dayjs/1.11.7:
+    resolution: {integrity: sha512-+Yw9U6YO5TQohxLcIkrXBeY73WP3ejHWVvx8XCk3gxvQDCTEmS48ZrSZCKciI7Bhl/uCMyxYtE9UqRILmFphkQ==}
+    dev: false
 
   /debug/3.2.7:
     resolution: {integrity: sha512-CFjzYYAi4ThfiQvizrFQevTTXHtnCqWfe7x1AhgEscTz6ZbLbfoLRLPugTQyBth6f8ZERVUSyWHFD/7Wu4t1XQ==}

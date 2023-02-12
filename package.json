@@ -21,6 +21,7 @@
     "@astrojs/netlify": "^2.1.2",
     "@unocss/reset": "^0.49.4",
     "astro": "^2.0.10",
+    "dayjs": "^1.11.7",
     "github-markdown-css": "^5.2.0",
     "remark-toc": "^8.0.1"
   },

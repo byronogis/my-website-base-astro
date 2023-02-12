@@ -1,4 +1,6 @@
 ---
+import { formatData } from "~/utils/date";
+
 const { essays } = Astro.props
 ---
 
@@ -17,7 +19,7 @@ const { essays } = Astro.props
         class="italic"
         style="color: var(--color-text-muted);"
       >{
-        new Date(essay.data.date).toLocaleDateString()
+        formatData(essay.data?.update || essay.data?.date)
         || '无'
       }</span>
     </li>
