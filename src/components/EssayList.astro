@@ -16,7 +16,7 @@ const { essays } = Astro.props
       >{essay.data.title}</a>
 
       <span
-        class="italic"
+        class="flex-none italic hidden sm:block"
         style="color: var(--color-text-muted);"
       >{
         formatData(essay.data?.update || essay.data?.date)
