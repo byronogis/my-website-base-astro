@@ -5,7 +5,7 @@ index 0c333ba9503300d334530789a78b0d9c267a5afd..f9796bc4ae888074ebd10429734104ef
 @@ -1,5 +1,5 @@
 -@media (prefers-color-scheme: dark) {
 -  .markdown-body {
-+@media (all) {
++@media all {
 +  :root.dark .markdown-body {
      color-scheme: dark;
      --color-prettylights-syntax-comment: #8b949e;
@@ -15,7 +15,7 @@ index 0c333ba9503300d334530789a78b0d9c267a5afd..f9796bc4ae888074ebd10429734104ef
  }
  
 -@media (prefers-color-scheme: light) {
-+@media (all) {
++@media all {
    .markdown-body {
      color-scheme: light;
      --color-prettylights-syntax-comment: #6e7781;
