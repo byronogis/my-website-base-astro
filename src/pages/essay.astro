@@ -8,16 +8,20 @@ const essays = await getCollection('essay')
 // 默认时间正序
 const collectionOrder = (collection, options = { type: 'date', order: 'asc' }) => {
   return collection.sort((a, b) => {
-    if (options.order !== 'asc') [a, b] = [b, a]
+    (options.order !== 'asc') && ([a, b] = [b, a])
+
+    let flag
 
     switch (options.type) {
       case 'date':
-        return +new Date(a.data?.update || a.data?.date) - +new Date(b.data?.update || b.data?.date)
-        break;
-    
+        flag = +new Date(a.data?.update || a.data?.date) - +new Date(b.data?.update || b.data?.date)
+        break
+
       default:
-        break;
+        break
     }
+
+    return flag
   })
 }
 ---
