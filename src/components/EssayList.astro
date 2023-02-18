@@ -8,20 +8,14 @@ const { essays } = Astro.props
   {essays.map(essay => (
     <li
       data-slug={essay.slug}
-      class="flex justify-between items-start"
     >
       <a
-        class="unset hover"
+        class="unset hover flex justify-between items-start"
         href={`/essay/detail/${essay.slug}`}
-      >{essay.data.title}</a>
-
-      <span
-        class="flex-none italic hidden sm:block"
-        style="color: var(--color-text-muted);"
-      >{
-        formatData(essay.data?.update || essay.data?.date)
-        || '无'
-      }</span>
+      >
+        <span>{essay.data.title}</span>
+        <span class="flex-none italic hidden sm:block">{ formatData(essay.data?.update || essay.data?.date) || '--' }</span>
+      </a>
     </li>
   ))}
 </ul>
