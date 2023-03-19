@@ -15,6 +15,7 @@ specifiers:
   eslint: ^8.36.0
   eslint-plugin-astro: ^0.26.0
   github-markdown-css: ^5.2.0
+  husky: ^8.0.0
   remark-collapse: ^0.1.2
   remark-toc: ^8.0.1
 
@@ -37,6 +38,7 @@ devDependencies:
   '@unocss/preset-uno': 0.50.6
   eslint: 8.36.0
   eslint-plugin-astro: 0.26.0_eslint@8.36.0
+  husky: 8.0.3
 
 packages:
 
@@ -3188,6 +3190,12 @@ packages:
     resolution: {integrity: sha512-rQLskxnM/5OCldHo+wNXbpVgDn5A17CUoKX+7Sokwaknlq7CdSnphy0W39GU8dw59XiCXmFXDg4fRuckQRKewQ==}
     engines: {node: '>=12.20.0'}
     dev: false
+
+  /husky/8.0.3:
+    resolution: {integrity: sha512-+dQSyqPh4x1hlO1swXBiNb2HzTDN1I2IGLQx1GrBuiqFJfoMrnZWwVmatvSiO+Iz8fBUnf+lekwNo4c2LlXItg==}
+    engines: {node: '>=14'}
+    hasBin: true
+    dev: true
 
   /ieee754/1.2.1:
     resolution: {integrity: sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==}

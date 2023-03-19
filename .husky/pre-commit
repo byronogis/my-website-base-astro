@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo -e "Updating Front Matter..."
+
+./scripts/update-frontmatter.sh
+
+echo -e "Front Matter updated."
