@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Get the current date in ISO 8601 format
-DATE=$(date +"%Y-%m-%d %H:%M:%S")
+DATE=$(date +"%Y-%m-%d %H:%M")
 
 # Get the names of the Markdown files being committed
 FILES=$(git diff --cached --name-only --diff-filter=ACM | grep '\.md$')
