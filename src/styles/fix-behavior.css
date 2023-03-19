@@ -1,0 +1,11 @@
+/* break long words */
+*,
+::before,
+::after {
+  word-break: break-word;
+}
+
+/* 代码块不换行显示 */
+pre {
+  white-space: pre !important;
+}
