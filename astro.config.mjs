@@ -73,14 +73,6 @@ export default defineConfig({
       presets: [
         UnoCSSPresetUno(),
       ],
-      // theme: {
-      //   breakpoints: {
-      //     sm: { max: '640px' },
-      //     md: { min: '640px', max: '768px' },
-      //     lg: { min: '768px', max: '1024px' },
-      //     xl: { min: '1024px' },
-      //   },
-      // },
     }),
   ], // 扩展 Astro 功能 添加框架支持（如 Solid.js）、新功能（如站点地图）和新库支持（如 Partytown 和 Turbolinks）
 
