@@ -1,4 +1,5 @@
 ---
+update: 2023-03-19 14:40
 title: "使用 Git 钩子和 Bash 脚本自动更新 Markdown 文件的 frontmatter"
 description: "使用 Git 钩子和 Bash 脚本自动更新 Markdown 文件的 frontmatter"
 date: 2023-03-19 12:40
@@ -12,6 +13,7 @@ head:
     - name: "keywords"
       content: "git, bash, markdown, frontmatter"
 ---
+
 
 ## 情景
 
@@ -37,23 +39,26 @@ Git 钩子是一些可配置的脚本，可以在 Git 命令执行之前或之�
 # 获取当前时间
 DATE=$(date +"%Y-%m-%d %H:%M")
 
-# 获取即将提交的 md 文件的名称
+# 获取待提交的 Markdown 文件名
 FILES=$(git diff --cached --name-only --diff-filter=ACM | grep '\.md$')
 
-# 循环遍历每个 md 文件并更新它的 frontmatter
+# 遍历每个待提交的 Markdown 文件并更新其 Front Matter
 for FILE in $FILES; do
-  # 检查文件是否包含 frontmatter
+  # 判断文件是否包含 Front Matter
   if grep -q '^---' "$FILE"; then
-    # 如果存在，就更新 frontmatter 中的 `update` 字段
-    if grep -q 'update:2023-03-19 13:14
-      sed -i "s/\(update:2023-03-19 13:14
+    # 使用 awk 在第二个 '---' 行之前的内容，匹配 'update' 字段
+    FRONT_MATTER=$(awk '/^---/{n++;next} n==2{exit} {print}' "$FILE")
+    if echo "$FRONT_MATTER" | grep -q 'update:'; then
+      # 更新 'update' 字段的时间戳
+      sed -i "0,/update:/s/\(update:\s*\).*/\1$DATE/" "$FILE"
     else
-      # 如果不存在，就插入一个新的 `update` 字段到 frontmatter 中
-      sed -i "s/\(---\)/\1\nupdate: 2023-03-19 13:14
+      # 如果 Front Matter 中不存在 'update' 字段，则在第一个 '---' 行之后添加
+      sed -i "0,/^---/{/^---/a update: $DATE
+      :b;n;bb}" "$FILE"
     fi
   else
-    #  如果不存在 frontmatter，就插入一个新的 frontmatter 和 `update` 字段
-    sed -i "1i---\nupdate: 2023-03-19 13:14
+    # 如果文件没有 Front Matter，则在开头添加 Front Matter 和 'update' 字段
+    sed -i "1i---\nupdate: $DATE\n---\n" "$FILE"
   fi
 done
 
