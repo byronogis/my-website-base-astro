@@ -2,5 +2,24 @@
   "extends": [
     "@antfu",
     "plugin:astro/base"
+  ],
+  "rules": {
+    "arrow-parens": ["error", "as-needed"],
+    "brace-style": "off",
+    "@typescript-eslint/brace-style": ["error", "1tbs"],
+    "no-console": ["warn"],
+    "curly": ["error", "all"]
+  },
+  "overrides": [
+    {
+      "files": ["*.astro"],
+      "parser": "astro-eslint-parser",
+      "parserOptions": {
+        "parser": "@typescript-eslint/parser",
+        "extraFileExtensions": [".astro"]
+      },
+      "rules": {
+      }
+    }
   ]
 }

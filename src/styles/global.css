@@ -1,105 +1,67 @@
-@import '@unocss/reset/normalize.css';
-@import './variable.css';
-@import './reset-select-element.css';
-
-:root {
-  background-color: var(--color-bg-body);
-  color: var(--color-text-body);
-  font-size: 1.0625em;
-  line-height: 2.0;
-  scroll-behavior: smooth;
-  transition: background-color .3s ease;
+/*
+  The CSS in this style tag is based off of Bear Blog's default CSS.
+  https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
+  License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
+ */
+body {
+	font-family: Verdana, sans-serif;
+	margin: auto;
+	padding: 20px;
+	max-width: 65ch;
+	text-align: left;
+	background-color: #fff;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	line-height: 1.5;
+	color: #444;
 }
-
-a:not(.unset) {
-    text-decoration: none;
-    background-repeat: no-repeat;
-    background-size: 100% 1.5px;
-    background-position: 0 100%;
-    background-image:
-        linear-gradient(to right, var(--color-text-link), var(--color-text-link));
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+b {
+	color: #222;
 }
-
-a:not(.unset):hover,
-a:where(.hover):hover {
-    color: var(--color-text-link);
+a {
+	color: #3273dc;
 }
-
-code:not(pre code):not(.unset) {
-  background-color: var(--color-bg-code);
-  color: var(--color-text-code);
-  padding: 0.125rem 0.25rem;
-  border-radius: 0.25rem;
-  font-size: 0.875em;
-  font-weight: 600;
-  border: 1px solid var(--color-border-code);
-  margin-bottom: 1.25em;
+nav a {
+	margin-right: 10px;
 }
-
-html.dark code:not(pre code) {
-  background-color: rgb(var(--color-bg-code) / 0.1);
-  border-color: rgb(var(--color-border-code) / 0.25);
+textarea {
+	width: 100%;
+	font-size: 16px;
 }
-
-ul:not(.unset):not(:where([class~="prose"] *)) {
-  padding-left: 0;
-  list-style: none;
+input {
+	font-size: 16px;
 }
-
-ul:not(:where([class~="prose"] *))>li {
-  position: relative;
-  padding-left: 1.375rem;
+content {
+	line-height: 1.6;
 }
-
-ul:not(.unset):not(:where([class~="prose"] *))>li::before {
-  position: absolute;
-  left: 0;
-  content: "»";
-  color: rgb(var(--color-text-muted));
+table {
+	width: 100%;
 }
-
-ol:not(.unset):not(:where([class~="prose"] *)) {
-  padding-left: 1.125rem;
+img {
+	max-width: 100%;
+	height: auto;
 }
-
-ol:not(.unset):not(:where([class~="prose"] *))>li::marker {
-  color: rgb(var(--color-text-muted))
+code {
+	padding: 2px 5px;
+	background-color: #f2f2f2;
 }
-
-ul:not(.unset):not(:where([class~="prose"] *))>li,
-ol:not(.unset):not(:where([class~="prose"] *))>li {
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
+pre {
+	padding: 1rem;
 }
-
-::selection {
-  background-color: var(--color-bg-selection);
-  color: var(--color-text-selection);
+pre > code {
+	all: unset;
 }
-
-.animated-link {
-  position: relative;
-  box-decoration-break: clone;
-  text-decoration: none;
-}
-
-.animated-link:hover:after {
-  transform: translateZ(0) scale(1);
-}
-
-.animated-link:after {
-  left: 0;
-  right: 0;
-  bottom: -3px;
-  content: "";
-  height: 2px;
-  position: absolute;
-  transform: translateZ(0) scaleX(0);
-  transform-origin: left center;
-  transition: all .150s ease-in-out;
-  background-image: linear-gradient(to right, var(--color-text-link), var(--color-text-link));
-}
-
-.animated-link.show:after {
-  transform: translateZ(0) scale(1);
+blockquote {
+	border: 1px solid #999;
+	color: #222;
+	padding: 2px 0px 2px 20px;
+	margin: 0px;
+	font-style: italic;
 }

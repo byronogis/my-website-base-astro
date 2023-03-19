@@ -1,0 +1,17 @@
+---
+import dayjs from 'dayjs'
+
+const { class: className, date, format = false } = Astro.props;
+---
+
+<time class={className} datetime={date.toISOString()}>
+  {
+    format
+      ? dayjs(date).format(format)
+      : date.toLocaleDateString('zh-CN', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+      })
+  }
+</time>

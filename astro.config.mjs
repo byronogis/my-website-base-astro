@@ -1,10 +1,13 @@
 import { defineConfig } from 'astro/config'
 // import netlify from '@astrojs/netlify/functions'
+import mdx from '@astrojs/mdx'
+import sitemap from '@astrojs/sitemap'
 import UnoCSS from '@unocss/astro'
 import UnoCSSPresetUno from '@unocss/preset-uno'
 
 // remark plugin
 import remarkToc from 'remark-toc'
+import remarkCollapse from 'remark-collapse'
 
 // https://astro.build/config
 export default defineConfig({
@@ -47,6 +50,11 @@ export default defineConfig({
     remarkPlugins: [
       [remarkToc, {
         heading: 'toc|table[ -]of[ -]contents?|目录',
+        tight: true,
+      }],
+      [remarkCollapse, {
+        test: 'toc|table[ -]of[ -]contents?|目录',
+        summary: '目录',
       }],
     ],
     // rehypePlugins: [],
@@ -58,10 +66,21 @@ export default defineConfig({
 
   // 集成
   integrations: [
+    mdx(),
+    sitemap(),
     UnoCSS({
+      injectReset: false,
       presets: [
         UnoCSSPresetUno(),
       ],
+      // theme: {
+      //   breakpoints: {
+      //     sm: { max: '640px' },
+      //     md: { min: '640px', max: '768px' },
+      //     lg: { min: '768px', max: '1024px' },
+      //     xl: { min: '1024px' },
+      //   },
+      // },
     }),
   ], // 扩展 Astro 功能 添加框架支持（如 Solid.js）、新功能（如站点地图）和新库支持（如 Partytown 和 Turbolinks）
 

@@ -1,0 +1,19 @@
+---
+import { SITE_NAVIGATION, SITE_TITLE } from '../consts'
+import HeaderLink from './HeaderLink.astro';
+---
+
+<header class="m-b-2em p-t-4">
+    <h2 class="m-b-0.5em text-6">
+        {SITE_TITLE}
+    </h2>
+    <nav class="sticky top-10px">
+      {SITE_NAVIGATION.map((item, index) => (
+        <HeaderLink
+          class={(index < (SITE_NAVIGATION.length - 1)) ? 'm-r-2' : ''}
+          href={item.href}
+          target={item.external ? '_blank' : '_self'}
+        >{item.value}</HeaderLink>
+      ))}
+    </nav>
+</header>

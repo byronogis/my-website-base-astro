@@ -1,0 +1,67 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import DefaultLayout from '../layouts/Default.astro'
+import FormattedDate from '../components/FormattedDate.astro'
+
+type Props = CollectionEntry<'essay'>['data']
+
+const { title, description, date, update, heroImage, head, tags } = Astro.props;
+---
+
+<DefaultLayout {...{ title, description, head }}>
+  <article class="typo">
+    {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
+    <h1 class="m-t-1 text-8">{title}</h1>
+    <!-- <FormattedDate date={date} /> -->
+    {
+      (
+        <div class="flex justify-between">
+          <div class="italic">
+            最后更新于 <FormattedDate date={update || date} />
+          </div>
+          <ul class="flex">
+            {tags?.map(tag => (
+              <li class="p-x-1 text-4 list-none">
+                <a class="text-gray-400 hover:text-gray-700" href={`/essay/tag/${tag}`}>{tag}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )
+    }
+    <hr />
+    <slot />
+  </article>
+</DefaultLayout>
+
+<style>
+  :global(#目录 + p + details > ul) {
+    position: sticky;
+    z-index: 10;
+    top: 0;
+    padding: 1em;
+    max-height: 50vh;
+    overflow: auto;
+    background-color: #fff;
+  }
+  :global(#目录 + p + details) {
+    padding:0.5em;
+    background-color: #fff;
+    position: sticky;
+    z-index: 11;
+    top: 0;
+    border-radius: 0.5em;
+    box-shadow: 0px 2px 5px 2px #eee;
+  }
+</style>
+
+<script>
+  const toc = document.querySelector('#目录 + p + details')
+  toc?.addEventListener('click', (e: any) => {
+    if (e.target?.tagName === 'SUMMARY') {
+      return
+    }
+    const isOpen = toc.getAttribute('open') === null
+    isOpen ? toc.setAttribute('open', '') : toc.removeAttribute('open')
+  }, false)
+</script>

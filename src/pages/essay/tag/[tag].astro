@@ -1,27 +1,35 @@
 ---
+import type { CollectionEntry } from 'astro:content'
 import { getCollection } from 'astro:content'
-import EssayListLayout from '~/layouts/EssayList.layout.astro'
-import EssayList from '~/components/EssayList.astro'
+import PostListLayout from '../../../layouts/PostList.astro'
 
 export async function getStaticPaths() {
-  const essayEntries = await getCollection('essay')
+  const posts = await getCollection('essay')
 
-  const tagsMap = essayEntries.reduce((acc, cur) => {
-    cur.data.tags.forEach((tag) => {
-      acc[tag] || (acc[tag] = [])
-      acc[tag].push(cur)
+  const tagsMap = posts.reduce((acc, post) => {
+    post.data.tags?.forEach(tag => {
+      if (!acc[tag]) {
+        acc[tag] = []
+      }
+      acc[tag].push(post)
     })
     return acc
-  }, {})
+  }, {} as Record<string, CollectionEntry<'essay'>[]>)
 
-  return Object.keys(tagsMap).map(tag => ({
-    params: { tag },
-    props: { entries: tagsMap[tag] },
-  }))
+  return Object.keys(tagsMap).map(tag => {
+    tagsMap[tag].sort((a, b) => {
+      const aDate = a.data.update || a.data.date
+      const bDate = b.data.update || b.data.date
+      return bDate.valueOf() - aDate.valueOf()
+    })
+
+    return {
+      params: { tag },
+      props: { posts: tagsMap[tag] },
+    }
+  })
 }
 
-const { entries: essays } = Astro.props
+const posts: CollectionEntry<'essay'>[] = Astro.props.posts
 ---
-<EssayListLayout>
-  <EssayList essays={essays}></EssayList>
-</EssayListLayout>
+<PostListLayout posts={posts}></PostListLayout>

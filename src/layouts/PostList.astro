@@ -1,0 +1,36 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import DefaultLayout from '../layouts/Default.astro'
+import FormattedDate from '../components/FormattedDate.astro'
+
+const posts: CollectionEntry<'essay'>[] = Astro.props.posts
+---
+
+<DefaultLayout>
+  <section>
+    <ul class="p-unset list-none">
+      {
+        posts.map(post => (
+          <li class="relative flex p-4 border m-b-2 last:m-b-0 shadow hover:shadow-lg hover:scale-101 transition-all">
+            <FormattedDate
+              class="m-r-8 italic text-[#595959] lt-sm:hidden"
+              date={post.data.update || post.data.date}
+              format={'YYYY-MM-DD'}
+            />
+            <a
+              class="flex-auto"
+              href={`/essay/detail/${post.slug}/`}
+            >{post.data.title}</a>
+            <ul class="flex absolute bottom-0 right-0">
+              {post.data.tags?.map(tag => (
+                <li class="p-x-1 text-3.2">
+                  <a class="text-gray-400 hover:text-gray-700" href={`/essay/tag/${tag}`}>{tag}</a>
+                </li>
+              ))}
+            </ul>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</DefaultLayout>

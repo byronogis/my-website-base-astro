@@ -1,40 +1,41 @@
 {
-  "name": "astro-demo",
+  "name": "my-website",
+  "type": "module",
   "version": "1.0.0",
-  "packageManager": "pnpm@7.25.1",
   "description": "",
   "author": "",
   "license": "ISC",
   "keywords": [],
-  "main": "index.js",
   "engines": {
     "node": ">=16.12.0"
   },
   "scripts": {
     "dev": "astro dev",
+    "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "astro": "astro",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@astrojs/netlify": "^2.1.2",
-    "@unocss/reset": "^0.49.4",
-    "astro": "^2.0.10",
+    "@astrojs/mdx": "^0.17.2",
+    "@astrojs/netlify": "^2.2.0",
+    "@astrojs/rss": "^2.3.0",
+    "@astrojs/sitemap": "^1.2.1",
+    "@unocss/reset": "^0.50.6",
+    "astro": "^2.1.3",
     "dayjs": "^1.11.7",
     "github-markdown-css": "^5.2.0",
+    "remark-collapse": "^0.1.2",
     "remark-toc": "^8.0.1"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.35.2",
-    "@unocss/astro": "^0.49.4",
-    "@unocss/preset-uno": "^0.49.4",
-    "eslint": "^8.34.0",
-    "eslint-plugin-astro": "^0.23.0"
-  },
-  "pnpm": {
-    "patchedDependencies": {
-      "github-markdown-css@5.2.0": "patches/github-markdown-css@5.2.0.patch"
-    }
+    "@antfu/eslint-config": "^0.36.0",
+    "@typescript-eslint/parser": "^5.55.0",
+    "@unocss/astro": "^0.50.6",
+    "@unocss/preset-uno": "^0.50.6",
+    "eslint": "^8.36.0",
+    "eslint-plugin-astro": "^0.26.0"
   }
 }
