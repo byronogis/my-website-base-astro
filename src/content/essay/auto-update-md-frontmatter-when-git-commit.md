@@ -45,15 +45,15 @@ for FILE in $FILES; do
   # 检查文件是否包含 frontmatter
   if grep -q '^---' "$FILE"; then
     # 如果存在，就更新 frontmatter 中的 `update` 字段
-    if grep -q 'update:2023-03-19 13:03
-      sed -i "s/\(update:2023-03-19 13:03
+    if grep -q 'update:2023-03-19 13:14
+      sed -i "s/\(update:2023-03-19 13:14
     else
       # 如果不存在，就插入一个新的 `update` 字段到 frontmatter 中
-      sed -i "s/\(---\)/\1\nupdate: 2023-03-19 13:03
+      sed -i "s/\(---\)/\1\nupdate: 2023-03-19 13:14
     fi
   else
     #  如果不存在 frontmatter，就插入一个新的 frontmatter 和 `update` 字段
-    sed -i "1i---\nupdate: 2023-03-19 13:03
+    sed -i "1i---\nupdate: 2023-03-19 13:14
   fi
 done
 
