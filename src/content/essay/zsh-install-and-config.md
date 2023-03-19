@@ -2,7 +2,7 @@
 title: Zsh 安装及初始化配置
 description: 切换默认shell为zsh，自动补全和历史记录插件，ohmyzsh
 date: 2022-04-02 22:44
-update: 2022-04-02 22:44
+update: 2023-03-19 12:33:17
 tags:
   - application
 head:
@@ -11,9 +11,9 @@ head:
       content: zsh ohmyzsh
 ---
 
-## 目录
-
 > [Zsh](https://zsh.sourceforge.io/) is a shell designed for interactive use, although it is also a powerful scripting language. 
+
+## 目录
 
 ## Zsh 安装
 

@@ -1,15 +1,17 @@
 ---
+update: 2023-03-19 12:33:17
 title: 给 systemd-boot 设置默认启动项
 description: 安装 windows 和 linux 双系统后, 设置 windows 为默认启动项
 tags:
   - linux
 date: 2022-10-19 15:35
 ---
-
-## 目录
+update: 2023-03-19 12:33:17
 
 > 安装 archlinux 时默认包含了 systemd-boot, 可直接安装  
 > systemd-boot 会自动扫描 Windows 启动管理器添加到启动项  
+
+## 目录
 
 
 ## 打印可用的启动项

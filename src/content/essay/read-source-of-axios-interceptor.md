@@ -2,7 +2,7 @@
 title: axios拦截器源码解读
 description: 请求拦截器、响应拦截器
 date: 2021-12-10 01:03
-update: 2021-12-10 01:03
+update: 2023-03-19 12:33:17
 tags:
   - js
 head:
@@ -12,12 +12,12 @@ head:
 ---
 
 
-## 目录
-
-
-
 > axios 拦截器源码解读  
 > 下文拉取分析 axios 库的时间点为2021-11-29
+
+
+## 目录
+
 
 ## 准备
 
@@ -249,17 +249,18 @@ head:
       // 一个简单的 runWhen
       // 下面的声明表示如果请求方式为 POST 则跳过此条请求过滤器的处理
       function jumpPost(config) {
-        if (config.method.toUpperCase() === 'POST')
+        if (config.method.toUpperCase() === 'POST') {
           return false
+        }
       
       }
       
       // 使用
       // ...
-      axios.interceptors.request.use((config) => {
+      axios.interceptors.request.use(config => {
         // ...
         return config
-      }, (error) => {
+      }, error => {
         // ...
         return Promise.reject(error)
       }, {
@@ -275,10 +276,10 @@ head:
       ```js
       // 使用
       // ...
-      axios.interceptors.request.use((config) => {
+      axios.interceptors.request.use(config => {
         // ...
         return config
-      }, (error) => {
+      }, error => {
         // ...
         return Promise.reject(error)
       }, {
@@ -327,7 +328,7 @@ head:
       while (i) {
         console.log(i)
         i--
-        promise = promise.then((a) => {
+        promise = promise.then(a => {
           console.log(a)
           return a
         }, e => Promise.reject(e))
@@ -365,10 +366,10 @@ head:
    这里简单写一下日常使用请求拦截器的代码  
 
    ```js
-   axios.interceptors.request.use((config) => {
+   axios.interceptors.request.use(config => {
      // 在发送请求之前做些什么
      return config
-   }, (error) => {
+   }, error => {
      // 对请求错误做些什么
      return Promise.reject(error)
    })

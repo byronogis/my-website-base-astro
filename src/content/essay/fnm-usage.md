@@ -2,7 +2,7 @@
 title: fnm node版本管理工具
 description: Fast Node Manager
 date: 	2022-05-03 19:47
-update: 	2022-07-31 19:54
+update: 	2023-03-19 12:33:17
 tags:
   - application
 head:
@@ -12,10 +12,9 @@ head:
 ---
 
 
-## 目录
-
-
 > [Fast and simple Node.js version manager, built in Rust](https://github.com/Schniz/fnm)  
+
+## 目录
 
 ## 安装
 

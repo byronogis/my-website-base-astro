@@ -2,7 +2,7 @@
 title: Vue Router 记住页面滚动位置的简单实现
 description: 利用内置组件`<keep-alive>`在页面组件得以被缓存的基础上, 再加以`document.documentElement.scrollTop`获取滚动距离, 后返回页面时恢复滚动距离
 date: 2021-11-02 22:00
-update: 2021-11-02 22:00
+update: 2023-03-19 12:33:17
 tags:
   - vue
 head:
@@ -12,10 +12,10 @@ head:
 ---
 
 
-## 目录
-
 > 本质就是, 利用内置组件`<keep-alive>`在页面组件得以被缓存的基础上, 再加以`document.documentElement.scrollTop`获取滚动距离, 后返回页面时恢复滚动距离
 > 实现效果, 打开A页面, 滚动至a处, 切换至B页面, 返回A页面, 此时页面位置为a点而非顶部
+
+## 目录
 
 
 ## 路由出口

@@ -2,7 +2,7 @@
 title: Arch 使用指纹
 description: 20XKA001CD ThinkPad T14 Gen 2a & KDE + SDDM  
 date: 2022-06-03 22:13
-update: 2022-06-03 22:13
+update: 2023-03-19 12:33:17
 tags:
   - linux
 head:
@@ -11,12 +11,12 @@ head:
       content: Arch 指纹 KDE SDDM  
 ---
 
-## 目录
-
 > 20XKA001CD ThinkPad T14 Gen 2a  
 > KDE + SDDM  
 >
 > [arch wiki](https://wiki.archlinux.org/title/Fprint)
+
+## 目录
 
 ## 电脑固件更新管理（可选）
 

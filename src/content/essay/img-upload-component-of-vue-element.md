@@ -2,7 +2,7 @@
 title: Vue+Element+对象存储 图片上传组件简单封装
 description: 环境参考：vue`2.6.10`, element-ui`2.13.2`, 阿里云对象存储OSS ali-oss`6.16.0`
 date: 2021-12-14 20:30
-update: 2021-12-14 20:30
+update: 2023-03-19 12:33:17
 tags:
   - vue
 head:
@@ -12,9 +12,9 @@ head:
 ---
 
 
-## 目录
-
 > 环境参考：vue`2.6.10`, element-ui`2.13.2`, 阿里云对象存储OSS ali-oss`6.16.0`
+
+## 目录
 
 ## 描述
 

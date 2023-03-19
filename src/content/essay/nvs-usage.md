@@ -2,7 +2,7 @@
 title: NVS node版本管理工具简单介绍及使用
 description: Node Version Switcher
 date: 2022-04-04 13:01
-update: 2022-04-04 13:01
+update: 2023-03-19 12:33:17
 tags:
   - application
 head:
@@ -12,11 +12,11 @@ head:
 ---
 
 
-## 目录
-
 
 > [Node Version Switcher](https://github.com/jasongin/nvs)  
 > windows上也可以使用的node版本管理工具  
+
+## 目录
 
 ## 安装
 

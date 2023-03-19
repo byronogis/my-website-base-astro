@@ -4,12 +4,12 @@ description:
 tags:
   - linux
 date: 2022-12-10 06:21
-update: 2022-12-12 12:30
+update: 2023-03-19 12:33:17
 ---
 
-## 目录
-
 > [dwm](https://wiki.archlinux.org/title/Dwm) 是一个足够轻量的 动态[WM](https://wiki.archlinux.org/title/Window_manager)  
+
+## 目录
 
 ## 安装
 

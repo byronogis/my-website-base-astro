@@ -2,17 +2,17 @@
 title: Arch 一些软件安装
 description: archlinux 使用中一些自用软件的安装记录
 date: 2022-06-03 12:12
-update: 2022-12-12 13:00
+update: 2023-03-19 12:33:17
 tags:
   - linux
   - application
 ---
 
-## 目录
-
 > 省略了相关的 sudo，提示需要权限提升时行首添加 sudo 重新执行即可  
 > AUR 选用的是 paru（无强制关联）
 > 由于使用的kde所以部分首选了kde配套的应用
+
+## 目录
 
 ## 软件集
 

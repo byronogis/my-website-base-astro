@@ -2,7 +2,7 @@
 title: VirtualBox 中安装win7使用usb3.0设备注意
 description: VirtualBox中安装win7使用usb3.0设备注意.md
 date: 2022-02-26 21:42
-update: 2022-02-26 21:42
+update: 2023-03-19 12:33:17
 tags:
   - application
 head:
@@ -10,8 +10,6 @@ head:
     - name: keywords
       content: VirtualBox win7 usb3.0
 ---
-
-## 目录
 
 
 1. 到 [官网](https://www.virtualbox.org/wiki/Downloads) 下载扩展包（Oracle VM VirtualBox Extension Pack，注意与已安装的VirtualBox版本对应)，安装

@@ -2,7 +2,7 @@
 title: js 递归优化——尝试为特定情况下的递归算法做次数减法
 description: 单条数据在整个算法中仅需做一次处理时通过剔除已遍历过的数据达到后续减压的目的
 date: 2021-12-05 02:13
-update: 2021-12-05 02:13
+update: 2023-03-19 12:33:17
 tags:
   - js
 head:
@@ -12,9 +12,9 @@ head:
 ---
 
 
-## 目录
-
 > 特定情况在这里指，单条数据在整个算法中仅需做一次处理  
+
+## 目录
 
 ## 前言
 
@@ -35,8 +35,9 @@ function flatToTree(list, id) { // 数据树形化
   for (let i = 0; i < list.length; i++) {
     if (list[i].pid === id) {
       const children = flatToTree(list, list[i].id)
-      if (children.length)
-        list[i].children = children // 规避无子节点的数据携带不必要的 children 空数组
+      if (children.length) {
+        list[i].children = children
+      } // 规避无子节点的数据携带不必要的 children 空数组
       result.push(list[i])
     }
   }
@@ -61,8 +62,9 @@ function flatToTree(list, id) { // 数据树形化
       list.splice(i, 1) // 在原数组中删除此条数据
       i-- // 遍历回跳
       const children = flatToTree(list, temp.id)
-      if (children.length)
-        temp.children = children // 规避无子节点的数据携带不必要的 children 空数组
+      if (children.length) {
+        temp.children = children
+      } // 规避无子节点的数据携带不必要的 children 空数组
       result.push(temp)
     }
   }
@@ -116,8 +118,9 @@ function getData(intNum = 20, top = 5) {
       id: i,
       pid: getRandomInt(1, i - 1) // 规避id与pid相等的情况
     }
-    if (i <= top)
+    if (i <= top) {
       item.pid = 0
+    }
     data.push(item)
   }
   return data
@@ -136,13 +139,13 @@ function flatToTree(list, id, complete = true, num) {
       num[0]++ // 计数
       if (list[i].pid === id) {
         const children = flatToTree(list, list[i].id, true, num)
-        if (children.length)
-          list[i].children = children // 规避无子节点的数据携带不必要的 children 空数组
+        if (children.length) {
+          list[i].children = children
+        } // 规避无子节点的数据携带不必要的 children 空数组
         result.push(list[i])
       }
     }
-  }
-  else { // 递归次数优化
+  } else { // 递归次数优化
     for (let i = 0; i < list.length; i++) {
       num[0]++ // 计数
       if (list[i].pid === id) {
@@ -152,8 +155,9 @@ function flatToTree(list, id, complete = true, num) {
         i--
         // ----------
         const children = flatToTree(list, temp.id, false, num)
-        if (children.length)
-          temp.children = children // 规避无子节点的数据携带不必要的 children 空数组
+        if (children.length) {
+          temp.children = children
+        } // 规避无子节点的数据携带不必要的 children 空数组
         result.push(temp)
       }
     }
@@ -166,12 +170,11 @@ function flatToTree(list, id, complete = true, num) {
 function resolveObjectFromArray(arr, res) {
   // 参数 arr 表示树形化数据
   // 参数 res 用来接收扁平化数据
-  arr.forEach((item) => {
+  arr.forEach(item => {
     if (item.children) {
       res.push({ id: item.id, pid: item.pid })
       resolveObjectFromArray(item.children, res)
-    }
-    else {
+    } else {
       res.push(item)
     }
   })
@@ -184,7 +187,7 @@ function multiTest(complete = true) {
   // const data = [...resourceData]
   // 减小影响结果的可能性，生成新的地址存放数据
   const data = []
-  resourceData.forEach((item) => {
+  resourceData.forEach(item => {
     data.push({ ...item })
   })
 
