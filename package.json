@@ -1,12 +1,8 @@
 {
   "name": "my-website",
   "type": "module",
-  "version": "1.0.0",
+  "private": true,
   "packageManager": "pnpm@7.25.1",
-  "description": "",
-  "author": "",
-  "license": "ISC",
-  "keywords": [],
   "engines": {
     "node": ">=16.12.0"
   },
