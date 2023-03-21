@@ -1,5 +1,5 @@
 ---
-update: 2023-03-19 14:40
+update: 2023-03-21 23:48
 title: "使用 Git 钩子和 Bash 脚本自动更新 Markdown 文件的 frontmatter"
 description: "使用 Git 钩子和 Bash 脚本自动更新 Markdown 文件的 frontmatter"
 date: 2023-03-19 12:40
@@ -14,6 +14,7 @@ head:
       content: "git, bash, markdown, frontmatter"
 ---
 
+## 目录
 
 ## 情景
 
