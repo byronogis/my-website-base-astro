@@ -1,5 +1,5 @@
 import { defineCollection, z } from 'astro:content'
-import { SITE_POST_TAGS } from '../consts'
+import { SITE_POST_TAGS } from '~/consts'
 
 const essay = defineCollection({
   schema: z.object({
