@@ -26,10 +26,12 @@
     "dayjs": "^1.11.7",
     "github-markdown-css": "^5.2.0",
     "remark-collapse": "^0.1.2",
-    "remark-toc": "^8.0.1"
+    "remark-toc": "^8.0.1",
+    "wordcloud": "^1.2.2"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.36.0",
+    "@types/wordcloud": "^1.2.0",
     "@typescript-eslint/parser": "^5.55.0",
     "@unocss/astro": "^0.50.6",
     "@unocss/preset-uno": "^0.50.6",

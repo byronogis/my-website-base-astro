@@ -6,6 +6,7 @@ export const SITE_DESCRIPTION = 'Welcome to my website!'
 export const SITE_NAVIGATION = [
   { value: 'Home', href: '/' },
   { value: 'Essay', href: '/essay' },
+  { value: 'Tags', href: '/tags' },
   // { value: 'Project', href: '/project' },
   { value: 'About', href: '/about' },
   { value: 'Github', href: 'https://github.com/liamrad', external: true },
