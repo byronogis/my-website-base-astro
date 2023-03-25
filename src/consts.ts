@@ -17,6 +17,7 @@ export const SITE_POST_TAGS: [string, ...string[]] = [
   'application',
   'astro',
   'bash',
+  'codesandbox',
   'computer',
   'configuration',
   'css',

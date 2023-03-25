@@ -1,11 +1,12 @@
 ---
-update: 2023-03-25 17:19
+update: 2023-03-25 17:22
 title: "CSS 粘性定位吸底"
 description: "A CSS position: sticky but bottom example"
 date: 2023-03-25 13:00
 tags:
   - css
   - layout
+  - codesandbox
 ---
 
 ## 目录
