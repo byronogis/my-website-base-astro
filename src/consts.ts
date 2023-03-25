@@ -24,6 +24,7 @@ export const SITE_POST_TAGS: [string, ...string[]] = [
   'html',
   'git',
   'js',
+  'layout',
   'linux',
   'markdown',
   'node',
