@@ -1,5 +1,5 @@
 ---
-update: 2023-03-25 17:01
+update: 2023-03-25 17:19
 title: "CSS 粘性定位吸底"
 description: "A CSS position: sticky but bottom example"
 date: 2023-03-25 13:00
@@ -24,7 +24,7 @@ tags:
 
 ## Demo
 
-<iframe src="https://codesandbox.io/embed/daily-css-e0t4ur?autoresize=1&fontsize=14&hidenavigation=1&initialpath=%2Fpractice%2F20230325-%E7%B2%98%E6%80%A7%E5%AE%9A%E4%BD%8D%E5%90%B8%E5%BA%95.html&module=%2Fpractice%2F20230325-%E7%B2%98%E6%80%A7%E5%AE%9A%E4%BD%8D%E5%90%B8%E5%BA%95.html&theme=dark&view=preview"
+<iframe src="https://codesandbox.io/embed/daily-css-e0t4ur?autoresize=1&fontsize=14&hidenavigation=0&initialpath=/practice/20230325-粘性定位吸底.html&module=/practice/20230325-粘性定位吸底.html&theme=dark&view=preview"
   style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
   title="daily-css"
   allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
