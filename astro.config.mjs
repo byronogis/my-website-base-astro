@@ -4,11 +4,19 @@ import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
 import UnoCSS from '@unocss/astro'
 import UnoCSSPresetUno from '@unocss/preset-uno'
+import UnoCSSPresetIcons from '@unocss/preset-icons'
 import vue from '@astrojs/vue'
 
 // remark plugin
 import remarkToc from 'remark-toc'
 import remarkCollapse from 'remark-collapse'
+
+// resolve dynamic icon of unocss
+// https://github.com/unocss/unocss/issues/1976
+const dynamicIconsEnum = [
+  'i-carbon-logo-github',
+  'i-carbon-search',
+]
 
 // https://astro.build/config
 export default defineConfig({
@@ -73,10 +81,17 @@ export default defineConfig({
       injectReset: false,
       presets: [
         UnoCSSPresetUno(),
+        UnoCSSPresetIcons({
+          extraProperties: {
+            'display': 'inline-block',
+            'vertical-align': 'middle',
+          },
+        }),
       ],
       shortcuts: {
         'card-list-item': 'p-4 border shadow hover:shadow-lg transition-all rounded',
       },
+      safelist: [...dynamicIconsEnum],
     }),
     vue(),
   ], // 扩展 Astro 功能 添加框架支持（如 Solid.js）、新功能（如站点地图）和新库支持（如 Partytown 和 Turbolinks）
