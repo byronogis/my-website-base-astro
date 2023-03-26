@@ -7,11 +7,11 @@ const posts: CollectionEntry<'essay'>[] = Astro.props.posts
 ---
 
 <DefaultLayout>
-  <section>
+  <section data-pagefind-ignore>
     <ul class="p-unset list-none">
       {
         posts.map(post => (
-          <li class="relative flex p-4 border m-b-2 last:m-b-0 shadow hover:shadow-lg hover:scale-101 transition-all">
+          <li class="relative flex m-b-2 last:m-b-0 card-list-item  hover:scale-101">
             <FormattedDate
               class="m-r-8 italic text-[#595959] lt-sm:hidden"
               date={post.data.update || post.data.date}

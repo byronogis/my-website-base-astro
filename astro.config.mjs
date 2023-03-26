@@ -74,6 +74,9 @@ export default defineConfig({
       presets: [
         UnoCSSPresetUno(),
       ],
+      shortcuts: {
+        'card-list-item': 'p-4 border shadow hover:shadow-lg transition-all rounded',
+      },
     }),
     vue(),
   ], // 扩展 Astro 功能 添加框架支持（如 Solid.js）、新功能（如站点地图）和新库支持（如 Partytown 和 Turbolinks）

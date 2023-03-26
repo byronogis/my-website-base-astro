@@ -1,6 +1,7 @@
 ---
 import { SITE_NAVIGATION, SITE_TITLE } from '~/consts'
-import HeaderLink from '~/components/HeaderLink.astro';
+import HeaderLink from '~/components/HeaderLink.astro'
+import Search from '~/components/Search.vue'
 ---
 
 <header class="m-b-2em p-t-4">
@@ -15,5 +16,6 @@ import HeaderLink from '~/components/HeaderLink.astro';
           target={item.external ? '_blank' : '_self'}
         >{item.value}</HeaderLink>
       ))}
+        <Search client:only="vue"><a href="javascript:;" class="m-l-2 cursor-pointer">Search</a></Search>
     </nav>
 </header>
