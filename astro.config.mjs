@@ -4,6 +4,7 @@ import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
 import UnoCSS from '@unocss/astro'
 import UnoCSSPresetUno from '@unocss/preset-uno'
+import vue from '@astrojs/vue'
 
 // remark plugin
 import remarkToc from 'remark-toc'
@@ -74,6 +75,7 @@ export default defineConfig({
         UnoCSSPresetUno(),
       ],
     }),
+    vue(),
   ], // 扩展 Astro 功能 添加框架支持（如 Solid.js）、新功能（如站点地图）和新库支持（如 Partytown 和 Turbolinks）
 
   // vite
