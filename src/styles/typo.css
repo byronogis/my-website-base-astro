@@ -63,7 +63,7 @@ blockquote {
   position: relative;
   color: #999;
   font-weight: 400;
-  border-left: 1px solid #1abc9c;
+  border-left: 1px solid var(--primary-color);
   padding-left: 1em;
   margin: 1em 3em 1em 2em;
 }
@@ -131,7 +131,7 @@ sub {
 
 /* 让链接在 hover 状态下显示下划线 */
 a {
-  color: #1abc9c;
+  color: var(--primary-color);
 }
 
 a:hover {
@@ -139,7 +139,7 @@ a:hover {
 }
 
 .typo a {
-  border-bottom: 1px solid #1abc9c;
+  border-bottom: 1px solid var(--primary-color);
 }
 
 .typo a:hover {
