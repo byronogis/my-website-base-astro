@@ -9,10 +9,16 @@ const resultList = ref<any>([])
 
 let pagefind: any = null
 
+const isInputComplete = ref(true)
+
 const handleSearchInput = async (e: any) => {
   if (searchRef.value && searchRef.value.dataset.loaded !== 'true') {
     searchRef.value.dataset.loaded = 'true'
     pagefind = await import(new URL('/pagefind/pagefind.js', location.origin).href)
+  }
+
+  if (!isInputComplete.value) {
+    return
   }
 
   const search = await pagefind.search(e.target.value)
@@ -49,7 +55,9 @@ const handleSearchInput = async (e: any) => {
           type="text"
           tabindex="0"
           placeholder="Search..."
-          @input="handleSearchInput"
+          @keyup="handleSearchInput"
+          @compositionstart="isInputComplete = false"
+          @compositionend="isInputComplete = true"
         >
       </template>
       <template #default>
