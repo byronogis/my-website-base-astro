@@ -98,7 +98,7 @@ const handleInputKeyUp = async () => {
         />
       </template>
       <template #default>
-        <div v-if="resultList.length" class="p-2">
+        <div v-if="resultList.length && !isLoading" class="p-2">
           {{ resultList.length }} posts for type
         </div>
 
