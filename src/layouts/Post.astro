@@ -5,19 +5,25 @@ import FormattedDate from '~/components/FormattedDate.astro'
 
 type Props = CollectionEntry<'essay'>['data']
 
-const { title, description, date, update, heroImage, head, tags } = Astro.props;
+const { title, description, date, update, heroImage, heroImageAlt, head, tags } = Astro.props;
 ---
 
 <DefaultLayout {...{ title, description, head }}>
-  <article class="typo">
-    {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
-    <h1 class="m-t-1 text-8">{title}</h1>
+  <article class="typo" data-pagefind-body>
+    {
+      heroImage
+      && <img
+          width={720} height={360} src={heroImage} alt={heroImageAlt ?? title}
+          data-pagefind-meta="image[src], image_alt[alt]"
+        />
+    }
+    <h1 class="m-t-1 text-8" data-pagefind-meta="title">{title}</h1>
     <!-- <FormattedDate date={date} /> -->
     {
       (
         <div class="flex justify-between">
           <div class="italic">
-            最后更新于 <FormattedDate date={update || date} />
+            最后更新于 <FormattedDate date={update || date} data-pagefind-meta={`data:${update || date}`} />
           </div>
           <ul class="flex">
             {tags?.map(tag => (
