@@ -1,5 +1,5 @@
 ---
-update: 2023-03-26 23:07
+update: 2023-03-30 23:07
 title: 在你的 Astro 静态站点中添加搜索功能(译)
 description: 在你的 Astro 静态站点中添加搜索功能
 date: 2023-03-26 22:00
@@ -107,3 +107,7 @@ Pagefind 的优点是它不会影响你的网站的性能。只有当用户开�
 现在你可以向你的用户提供一个好的搜索体验，而不需要第三方提供商。我花了几个小时才弄好这个，所以希望这能节省你一些调试时间。你无法在开发时搜索你的网站，但是你可以随时构建你的网站来测试它。
 
 如果你想看看它的实际效果，你可以查看这篇文章的源代码。
+
+## 本站实现
+
+[github: Search.vue](https://github.com/liamrad/my-website-base-astro/blob/main/src/components/Search.vue)

@@ -16,6 +16,6 @@ import Search from '~/components/Search.vue'
           target={item.external ? '_blank' : '_self'}
         >{item.value}</HeaderLink>
       ))}
-        <Search client:only="vue"><a href="javascript:;" class="m-l-2 cursor-pointer">Search</a></Search>
+      <Search client:only="vue"><a href="javascript:;" class="m-l-2 cursor-pointer">Search</a></Search>
     </nav>
 </header>
