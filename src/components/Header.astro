@@ -14,10 +14,12 @@ const { class: ClassName } = Astro.props
   ClassName, 'components-header global-bg-blur',
 ]}>
 <div class="container m-a lt-sm:p-x-4 flex items-center content-start justify-between flex-wrap">
-  <h2 class="text-6">
-      <img src="/favicon.svg" alt="" class="hidden w-1em h-1em lt-sm:inline-block">
-      <span class="lt-sm:hidden">{SITE_TITLE}</span>
-  </h2>
+  <a href="/" class="hover:decoration-none">
+    <h2 class="text-6">
+        <img src="/favicon.svg" alt="" class="hidden w-1em h-1em lt-sm:inline-block">
+        <span class="lt-sm:hidden">{SITE_TITLE}</span>
+    </h2>
+  </a>
   <nav class="sticky top-10px flex items-center">
     {SITE_NAVIGATION.map((item, index) => (
       <span
