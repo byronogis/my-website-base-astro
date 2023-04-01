@@ -14,6 +14,7 @@ specifiers:
   '@unocss/preset-icons': ^0.50.6
   '@unocss/preset-uno': ^0.50.6
   '@unocss/reset': ^0.50.6
+  '@unocss/transformer-variant-group': ^0.50.6
   astro: ^2.1.3
   dayjs: ^1.11.7
   eslint: ^8.36.0
@@ -50,6 +51,7 @@ devDependencies:
   '@unocss/astro': 0.50.6
   '@unocss/preset-icons': 0.50.6
   '@unocss/preset-uno': 0.50.6
+  '@unocss/transformer-variant-group': 0.50.6
   eslint: 8.36.0
   eslint-plugin-astro: 0.26.0_eslint@8.36.0
   husky: 8.0.3
@@ -1441,6 +1443,12 @@ packages:
     dependencies:
       '@unocss/core': 0.50.6
       css-tree: 2.3.1
+    dev: true
+
+  /@unocss/transformer-variant-group/0.50.6:
+    resolution: {integrity: sha512-eAbJ2Ho1lYaFvpKexqUqixh2TvzcE/DNSIHncr/9Ezo9s06kkHxw4KeIxw//TF26zYP7IJx8l5F58HoSjdKwbQ==}
+    dependencies:
+      '@unocss/core': 0.50.6
     dev: true
 
   /@unocss/vite/0.50.6:

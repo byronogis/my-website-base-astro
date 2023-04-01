@@ -5,6 +5,7 @@ import sitemap from '@astrojs/sitemap'
 import UnoCSS from '@unocss/astro'
 import UnoCSSPresetUno from '@unocss/preset-uno'
 import UnoCSSPresetIcons from '@unocss/preset-icons'
+import UnoCSSTransformerVariantGroup from '@unocss/transformer-variant-group'
 import vue from '@astrojs/vue'
 
 // remark plugin
@@ -92,6 +93,7 @@ export default defineConfig({
         'card-list-item': 'p-4 border shadow hover:shadow-lg transition-all rounded',
       },
       safelist: [...dynamicIconsEnum],
+      transformers: [UnoCSSTransformerVariantGroup()],
     }),
     vue(),
   ], // 扩展 Astro 功能 添加框架支持（如 Solid.js）、新功能（如站点地图）和新库支持（如 Partytown 和 Turbolinks）
