@@ -5,13 +5,13 @@ import Footer from '~/components/Footer.astro'
 import { SITE_DESCRIPTION, SITE_TITLE } from '~/consts'
 import '~/styles/fix-behavior.css'
 
-const { title, description } = Astro.props
+const { title, description, head } = Astro.props
 ---
 
 <!DOCTYPE html>
 <html lang="zh">
   <head>
-    <BaseHead title={title || SITE_TITLE} description={description || SITE_DESCRIPTION} />
+    <BaseHead title={title || SITE_TITLE} description={description || SITE_DESCRIPTION} head={head} />
   </head>
   <body class="relative container m-a lt-sm:p-x-4 p-b-12 min-h-100vh overflow-overlay">
     <Header/>
