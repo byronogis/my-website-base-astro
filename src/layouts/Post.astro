@@ -37,14 +37,55 @@ const { title, description, date, update, heroImage, heroImageAlt, head, tags } 
       )
     }
     <hr />
-    <main>
+    <main class="layouts-post-main">
       <slot />
     </main>
   </article>
 </DefaultLayout>
 
 <script>
-  //
+document.querySelector('.layouts-post-main')?.addEventListener(
+  'click',
+  event => {
+    if (
+      event.target
+      && event.target instanceof HTMLAnchorElement
+      && event.target.hash.slice(1).match(/^toc-/)
+    ) {
+      event.preventDefault()
+
+      const hashSource = event.target.hash.slice(1).replace(/^toc-/, '')
+      const hash = decodeURIComponent(hashSource).toLowerCase()
+
+      event.target.hash = hash
+      history.pushState(null, '', event.target.href)
+
+      jumpToHash(hash)
+    }
+  },
+  false,
+)
+window.addEventListener('load', () => {
+  if (!location.hash) {
+    return
+  }
+
+  const hashSource = location.hash.slice(1)
+  const hash = decodeURIComponent(hashSource).toLowerCase()
+
+  setTimeout(() => {
+    jumpToHash(hash)
+  }, 0)
+})
+
+function jumpToHash(hash: string) {
+  const target = document.getElementById(hash) || document.getElementsByName(hash)[0]
+  window.scrollTo({
+    top: target?.offsetTop - 100,
+    left: 100,
+    behavior: 'smooth',
+  })
+}
 </script>
 
 <style>

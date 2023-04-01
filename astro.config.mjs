@@ -61,6 +61,7 @@ export default defineConfig({
       [remarkToc, {
         heading: 'toc|table[ -]of[ -]contents?|目录',
         tight: true,
+        prefix: 'toc-',
       }],
       [remarkCollapse, {
         test: 'toc|table[ -]of[ -]contents?|目录',
