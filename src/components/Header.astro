@@ -2,20 +2,85 @@
 import { SITE_NAVIGATION, SITE_TITLE } from '~/consts'
 import HeaderLink from '~/components/HeaderLink.astro'
 import Search from '~/components/Search.vue'
+
+interface Props {
+  class?: string
+}
+
+const { class: ClassName } = Astro.props
 ---
 
-<header class="m-b-2em p-t-4">
-    <h2 class="m-b-0.5em text-6">
-        {SITE_TITLE}
+<header class:list={[
+  ClassName, 'components-header global-bg-blur',
+  'flex items-center content-start justify-between flex-wrap',
+  'lt-sm:(fixed z-1 top-0 left-0 w-full p-x-4)',
+]}>
+    <h2 class="text-6">
+        <img src="/favicon.svg" alt="" class="hidden w-1em h-1em lt-sm:inline-block">
+        <span class="lt-sm:hidden">{SITE_TITLE}</span>
     </h2>
-    <nav class="sticky top-10px">
+    <nav class="sticky top-10px flex items-center">
       {SITE_NAVIGATION.map((item, index) => (
-        <HeaderLink
-          class={(index < (SITE_NAVIGATION.length - 1)) ? 'm-r-2' : ''}
-          href={item.href}
-          target={item.external ? '_blank' : '_self'}
-        >{item.value}</HeaderLink>
+        <span
+          class=''
+          class:list={[{ 'm-l-2': index, 'lt-sm:hidden': !item.pin }]}
+        >
+          <HeaderLink
+            href={item.href}
+            target={item.external ? '_blank' : '_self'}
+          >{item.value}</HeaderLink>
+        </span>
       ))}
-      <Search client:only="vue"><a href="javascript:;" class="m-l-2 cursor-pointer">Search</a></Search>
+      <span class="i-carbon-search m-l-2 cursor-pointer">
+        <Search client:only="vue">Search</Search>
+      </span>
+
+      <span class="i-carbon-menu sm:hidden m-l-2 cursor-pointer components-header-menu"></span>
     </nav>
+
+    <div class:list={[
+      'components-header-menu-panel',
+      'w-full hidden sm:hidden text-center',
+    ]}>
+      <div class:list={[
+        'components-header-menu-panel-inner',
+        'absolute inset-0 z--1 flex flex-col items-center justify-center',
+      ]}>
+        {SITE_NAVIGATION.filter(i => !i.pin).map((item, index) => (
+          <span class="text-6 p-y-4">
+            <HeaderLink
+              href={item.href}
+              target={item.external ? '_blank' : '_self'}
+            >{item.value}</HeaderLink>
+          </span>
+        ))}
+      </div>
+    </div>
 </header>
+
+<style>
+  .components-header-open {
+    height: 100%;
+  }
+</style>
+
+<script>
+  const componentsHeaderEl = document.querySelector('.components-header')
+  const componentsHeaderMenuEl = document.querySelector('.components-header-menu')
+  const componentsHeaderMenuPanelEl = document.querySelector('.components-header-menu-panel')
+  const componentsHeaderMenuPanelInnerEl = document.querySelector('.components-header-menu-panel-inner')
+
+  componentsHeaderMenuEl?.addEventListener('click', () => {
+    const isPanelClose = componentsHeaderMenuPanelEl?.classList.contains('hidden')
+    componentsHeaderEl?.classList[isPanelClose ? 'add' : 'remove']('components-header-open')
+    componentsHeaderMenuPanelEl?.classList.toggle('hidden')
+  })
+
+  componentsHeaderMenuPanelInnerEl?.addEventListener('click', e => {
+    if (e.target !== e.currentTarget) {
+      return
+    }
+    componentsHeaderEl?.classList.remove('components-header-open')
+    componentsHeaderMenuPanelEl?.classList.add('hidden')
+  })
+</script>

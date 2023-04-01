@@ -14,8 +14,8 @@ const { title, description, head } = Astro.props
     <BaseHead title={title || SITE_TITLE} description={description || SITE_DESCRIPTION} head={head} />
   </head>
   <body class="relative container m-a lt-sm:p-x-4 p-b-12 min-h-100vh overflow-overlay">
-    <Header/>
-    <main>
+    <Header class={'h-16 p-y-4'}/>
+    <main class="lt-sm:p-t-16">
       <slot />
     </main>
     <Footer />
