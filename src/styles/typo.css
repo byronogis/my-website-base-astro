@@ -6,8 +6,8 @@
 
 /* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
 html {
-  color: #333;
-  background: #fff;
+  color: var(--color-text);
+  background: var(--color-bg);
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   text-rendering: optimizelegibility;
@@ -202,7 +202,7 @@ figcaption {
 
 strong, b {
   font-weight: bold;
-  color: #000;
+  color: var(--color-text);
 }
 
 /* 可拖动文件添加拖动手势 */
@@ -247,7 +247,7 @@ strong, b {
 h1, h2, h3, h4, h5, h6 {
   font-family: PingFang SC, Verdana, Helvetica Neue, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
   font-weight: 100;
-  color: #000;
+  color: var(--color-text);
   line-height: 1.35;
 }
 
@@ -325,7 +325,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .typo-em, .typo em, legend, caption {
-  color: #000;
+  color: var(--color-text);
   font-weight: inherit;
 }
 

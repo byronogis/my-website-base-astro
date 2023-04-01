@@ -6,8 +6,8 @@
   'components-float-control container m-a h-0 flex justify-end',
 ]}>
   <div class:list={[
-    'cfc-back-top-top hidden',
-    'w-10 h-10 m-r-4 p-2 bg-white b-1 b-solid b-gray-400',
+    'cfc-back-to-top hidden',
+    'w-10 h-10 m-r-4 p-2 b-1 b-solid b-gray-400',
     'rounded-5 cursor-pointer',
     'fixed z-1 bottom-8',
   ]}>
@@ -16,7 +16,7 @@
 </div>
 
 <script>
-const backTopTop = document.querySelector('.cfc-back-top-top')
+const backTopTop = document.querySelector('.cfc-back-to-top')
 
 document?.addEventListener('scroll', () => {
   const isHidden = backTopTop?.classList.contains('hidden')
@@ -34,5 +34,10 @@ backTopTop?.addEventListener('click', () => {
 </script>
 
 <style>
-
+.cfc-back-to-top {
+  background-color: var(--color-bg);
+}
+.i-carbon-up-to-top {
+  background-color: var(--color-text);
+}
 </style>

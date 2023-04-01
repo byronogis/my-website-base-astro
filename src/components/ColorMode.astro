@@ -1,0 +1,23 @@
+---
+const { class: className } = Astro.props
+---
+
+<span class:list={['i-carbon-moon dark:i-carbon-sun', 'components-color-mode', className]}></span>
+
+<script>
+  const colorModeEl = document.querySelector('.components-color-mode')
+  const colorMode = localStorage.getItem('color-mode')
+  if (colorMode === 'dark') {
+    document.documentElement.classList.add('dark')
+  }
+  colorModeEl?.addEventListener('click', () => {
+    const isDark = document.documentElement.classList.contains('dark')
+    if (isDark) {
+      document.documentElement.classList.remove('dark')
+      localStorage.setItem('color-mode', 'light')
+    } else {
+      document.documentElement.classList.add('dark')
+      localStorage.setItem('color-mode', 'dark')
+    }
+  })
+</script>

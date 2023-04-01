@@ -28,11 +28,14 @@ const tagsCount = posts.reduce((acc, post) => {
 import WordCloud from 'wordcloud'
 const el = document.getElementById('wordcloud') as HTMLDivElement
 const tagsCount = JSON.parse(el.dataset.tagsCount as string) as Record<string, number>
+
+const isDark = document.documentElement.classList.contains('dark')
+
 const options = {
   list: Object.entries(tagsCount),
   // fontFamily: 'Finger Paint, cursive, sans-serif',
   // fontWeight: 'normal',
-  color: 'random-dark',
+  color: isDark ? 'random-light' : 'random-dark',
   classes: 'wordcloud',
   minSize: 10,
   weightFactor: 20,
@@ -71,10 +74,14 @@ WordCloud(el, options)
 </script>
 
 <style is:global>
+  #wordcloud {
+    background-color: var(--color-bg) !important;
+  }
   .wordcloud:hover {
     text-decoration:underline;
   }
   .wordcloud {
     cursor: pointer;
+    background-color: transparent;
   }
 </style>

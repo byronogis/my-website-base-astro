@@ -1,6 +1,7 @@
 ---
 import { SITE_NAVIGATION, SITE_TITLE } from '~/consts'
 import HeaderLink from '~/components/HeaderLink.astro'
+import ColorMode from '~/components/ColorMode.astro'
 import Search from '~/components/Search.vue'
 
 interface Props {
@@ -16,7 +17,7 @@ const { class: ClassName } = Astro.props
 <div class="container m-a lt-sm:p-x-4 flex items-center content-start justify-between flex-wrap">
   <a href="/" class="hover:decoration-none">
     <h2 class="text-6">
-        <img src="/favicon.svg" alt="" class="hidden w-1em h-1em lt-sm:inline-block">
+        <div class="logo hidden w-1em h-1em lt-sm:inline-block" />
         <span class="lt-sm:hidden">{SITE_TITLE}</span>
     </h2>
   </a>
@@ -32,11 +33,13 @@ const { class: ClassName } = Astro.props
         >{item.value}</HeaderLink>
       </span>
     ))}
-    <span class="i-carbon-search w-5 h-5 m-l-4 cursor-pointer">
+    <ColorMode class="m-l-4"></ColorMode>
+
+    <span class="i-carbon-search m-l-4">
       <Search client:only="vue">Search</Search>
     </span>
 
-    <span class="i-carbon-menu w-5 h-5 sm:hidden m-l-4 cursor-pointer components-header-menu"></span>
+    <span class="i-carbon-menu sm:hidden m-l-4 components-header-menu"></span>
   </nav>
 
   <div class:list={[
@@ -61,6 +64,12 @@ const { class: ClassName } = Astro.props
 </header>
 
 <style>
+  .logo {
+    background-color: var(--color-text);
+    -webkit-mask: url(/favicon.svg) no-repeat center;
+    mask: url(/favicon.svg) no-repeat center;
+  }
+
   .components-header-open {
     height: 100%;
   }
