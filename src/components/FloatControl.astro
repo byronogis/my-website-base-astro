@@ -1,0 +1,38 @@
+---
+
+---
+
+<div class:list={[
+  'components-float-control',
+  'fixed bottom-8 right-4 z-1',
+]}>
+  <div class:list={[
+    'cfc-back-top-top hidden',
+    'w-10 h-10 p-2 bg-white b-1 b-solid b-gray-400',
+    'rounded-5 cursor-pointer',
+  ]}>
+    <span class="i-carbon-up-to-top block w-full h-full"></span>
+  </div>
+</div>
+
+<script>
+const backTopTop = document.querySelector('.cfc-back-top-top')
+
+document?.addEventListener('scroll', () => {
+  const isHidden = backTopTop?.classList.contains('hidden')
+
+  if (document.documentElement.scrollTop > 300 && isHidden) {
+    backTopTop?.classList.remove('hidden')
+  } else if (document.documentElement.scrollTop <= 300 && !isHidden) {
+    backTopTop?.classList.add('hidden')
+  }
+})
+
+backTopTop?.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' })
+})
+</script>
+
+<style>
+
+</style>
