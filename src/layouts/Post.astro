@@ -41,7 +41,7 @@ const { title, description, date, update, heroImage, heroImageAlt, head, tags } 
 </DefaultLayout>
 
 <style>
-  :global(#目录 + p + details > ul) {
+  /* :global(#目录 + p + details > ul) {
     position: sticky;
     z-index: 10;
     top: 0;
@@ -58,16 +58,16 @@ const { title, description, date, update, heroImage, heroImageAlt, head, tags } 
     top: 0;
     border-radius: 0.5em;
     box-shadow: 0px 2px 5px 2px #eee;
-  }
+  } */
 </style>
 
 <script>
-  const toc = document.querySelector('#目录 + p + details')
-  toc?.addEventListener('click', (e: any) => {
-    if (e.target?.tagName === 'SUMMARY') {
-      return
-    }
-    const isOpen = toc.getAttribute('open') === null
-    isOpen ? toc.setAttribute('open', '') : toc.removeAttribute('open')
-  }, false)
+  // const toc = document.querySelector('#目录 + p + details')
+  // toc?.addEventListener('click', (e: any) => {
+  //   if (e.target?.tagName === 'SUMMARY') {
+  //     return
+  //   }
+  //   const isOpen = toc.getAttribute('open') === null
+  //   isOpen ? toc.setAttribute('open', '') : toc.removeAttribute('open')
+  // }, false)
 </script>
