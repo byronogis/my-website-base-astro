@@ -22,11 +22,11 @@ const { title, description, date, update, heroImage, heroImageAlt, head, tags } 
     <!-- <FormattedDate date={date} /> -->
     {
       (
-        <div class="flex justify-between">
-          <div class="italic">
+        <div class="flex justify-between lt-sm:flex-wrap">
+          <div class="italic lt-sm:w-full">
             最后更新于 <FormattedDate date={update || date} data-pagefind-meta={`data:${update || date}`} />
           </div>
-          <ul class="flex">
+          <ul class="flex important-m-0">
             {tags?.map(tag => (
               <li class="p-x-1 text-4 list-none">
                 <a class="text-gray-400 hover:text-gray-700" href={`/essay/tag/${tag}`}>{tag}</a>
