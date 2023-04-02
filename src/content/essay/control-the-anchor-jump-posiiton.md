@@ -54,7 +54,7 @@ const target = document.querySelector(hash)
 ### 跳转到目标元素
 
 ```js
-target.scrollIntoView({
+window.scrollTo({
   top: targte.offsetTop - 100, // 这里的 100 为 header 的高度
   behavior: 'smooth',
 })
