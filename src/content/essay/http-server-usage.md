@@ -2,10 +2,11 @@
 title: http-server 快速启动一个本地服务
 description: 使用 http-server 包快速启动一个本地服务, 比如用来做局域网传输
 date: 	2022-08-01 22:52
-update: 	2023-03-19 12:33:17
+update: 	2023-04-02 21:34
 tags:
   - js
   - node
+  - npm
 head:
   - - meta
     - name: keywords

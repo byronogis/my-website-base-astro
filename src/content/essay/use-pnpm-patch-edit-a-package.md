@@ -1,10 +1,15 @@
 ---
+update: 2023-04-02 21:34
 title: 利用 pnpm patch 编辑项目依赖
 description: 在依赖的第三方包的默认行为不贴合实际应用时, 可简单修改依赖源码以本地打补丁的方式进行修改
 tags:
   - node
   - pnpm
 date: 2022-12-25 11:15
+head:
+  - - meta
+    - name: keywords
+      content: pnpm patch 编辑项目依赖
 ---
 
 ## 目录

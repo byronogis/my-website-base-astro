@@ -1,9 +1,14 @@
 ---
+update: 2023-04-02 21:34
 title: vue的三种渲染定义方式
 description: 'vue的三种渲染定义方式: template, render, app.mount()'
 tags:
   - vue
 date: 2022-11-20 20:10
+head:
+  - - meta
+    - name: keywords
+      content: vue template render app.mount() 渲染
 ---
 
 ## 目录

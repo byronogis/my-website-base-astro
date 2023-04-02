@@ -1,10 +1,15 @@
 ---
-update: 2023-03-19 12:33:17
+update: 2023-04-02 21:34
 title: 给微软拼音添加小鹤双拼方案
 description: 给微软拼音添加小鹤双拼方案
 tags: 
   - windows
+  - 双拼
 date: 2022-10-17 10:00
+head:
+  - - meta
+    - name: keywords
+      content: windows 微软拼音 小鹤双拼
 ---
 update: 2023-03-19 12:33:17
 

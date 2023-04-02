@@ -1,9 +1,13 @@
 ---
-update: 2023-03-30 23:07
+update: 2023-04-02 21:34
 title: 在你的 Astro 静态站点中添加搜索功能(译)
 description: 在你的 Astro 静态站点中添加搜索功能
 date: 2023-03-26 22:00
-tags: [astro]
+tags: [astro, pagefind]
+head:
+  - - meta
+    - name: keywords
+      content: astro pagefind 搜索
 ---
 
 ## 目录

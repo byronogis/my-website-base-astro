@@ -2,10 +2,11 @@
 title: TypeScript 利用动态属性瞒过readonly只读修饰
 description: 以动态属性动态传输属性名称的方式可以瞒过类型检查，对 readonly 修饰的属性进行赋值,
 date: 2022-05-18 21:03
-update: 2023-03-19 12:33:17
+update: 2023-04-02 21:34
 tags:
   - js
   - typescript
+  - readonly
 head:
   - - meta
     - name: keywords

@@ -2,9 +2,10 @@
 title: fnm node版本管理工具
 description: Fast Node Manager
 date: 	2022-05-03 19:47
-update: 	2023-03-19 12:33:17
+update: 	2023-04-02 21:34
 tags:
   - application
+  - node
 head:
   - - meta
     - name: keywords

@@ -2,10 +2,15 @@
 title: Arch 一些软件安装
 description: archlinux 使用中一些自用软件的安装记录
 date: 2022-06-03 12:12
-update: 2023-03-19 12:33:17
+update: 2023-04-02 21:34
 tags:
   - linux
   - application
+  - archlinux
+head:
+  - - meta
+    - name: keywords
+      content: archlinux application
 ---
 
 > 省略了相关的 sudo，提示需要权限提升时行首添加 sudo 重新执行即可  

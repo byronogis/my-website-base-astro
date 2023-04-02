@@ -2,10 +2,11 @@
 title: Termux 使用
 description: 安卓手机上运行Linux系统  
 date: 2022-08-28 09:47
-update: 2023-03-19 12:33:17
+update: 2023-04-02 21:34
 tags:
   - linux
   - android
+  - termux
 head:
   - - meta
     - name: keywords

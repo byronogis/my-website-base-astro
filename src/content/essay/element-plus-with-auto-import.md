@@ -1,10 +1,16 @@
 ---
+update: 2023-04-02 21:34
 title: 使 element-plus 在 vite 项目中自动导入
 description: 组件, 图标
 tags:
   - vue
   - vite
+  - element-plus
 date: 2022-12-25 10:54
+head:
+  - - meta
+    - name: keywords
+      content: vue vite element-plus
 ---
 
 ## 目录

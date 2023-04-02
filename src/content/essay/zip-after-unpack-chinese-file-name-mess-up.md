@@ -2,13 +2,16 @@
 title: linux-zip解压后中文乱码
 description: 由windows下生成的zip格式的压缩包，在linux下解压后中文乱码
 date: 2022-06-12 22:11
-update: 2023-03-19 12:33:17
+update: 2023-04-02 21:34
 tags:
   - linux
+  - archlinux
+  - ark
+  - zip
 head:
   - - meta
     - name: keywords
-      content: linux arch ark unzip
+      content: linux arch ark unzip zip
 ---
 
 > [zip compressed package is garbled](https://wiki.archlinux.org/title/Localization/Simplified_Chinese#zip_compressed_package_is_garbled)

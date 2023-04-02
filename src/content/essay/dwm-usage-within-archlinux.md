@@ -3,8 +3,13 @@ title: 在 archlinux 中使用 dwm
 description: 
 tags:
   - linux
+  - dwm
 date: 2022-12-10 06:21
-update: 2023-03-19 12:33:17
+update: 2023-04-02 21:34
+head:
+  - - meta
+    - name: keywords
+      content: archlinux dwm
 ---
 
 > [dwm](https://wiki.archlinux.org/title/Dwm) 是一个足够轻量的 动态[WM](https://wiki.archlinux.org/title/Window_manager)  

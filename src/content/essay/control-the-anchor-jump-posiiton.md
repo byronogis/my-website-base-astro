@@ -1,8 +1,15 @@
 ---
-update: 2023-04-02 15:53
+update: 2023-04-02 21:34
 title: 让你的锚点跳转位置更精确
 description: 拦截事件默认行为, 自定位跳转位置, 避免在header固定时锚点的跳转会被header遮挡
 date: 2023-04-02 14:20
+tags:
+  - javascript
+  - html
+head:
+  - - meta
+    - name: keywords
+      content: javascript html 锚点跳转
 ---
 
 ## 目录

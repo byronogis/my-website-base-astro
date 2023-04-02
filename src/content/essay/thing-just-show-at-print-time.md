@@ -3,9 +3,14 @@ title: 只在打印时出现指定内容
 description: 方案一:监听打印事件动态插入内容; 方案二:利用媒体查询针对性设置样式
 tags:
   - html
+  - print
+  - mediaquery
 date: 2022-12-19 16:31
-update: 2022-12-19 23:00
-
+update: 2023-04-02 21:34
+head:
+  - - meta
+    - name: keywords
+      content: html print mediaquery 打印 媒体查询
 ---
 
 ## 目录

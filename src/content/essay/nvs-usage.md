@@ -2,9 +2,11 @@
 title: NVS node版本管理工具简单介绍及使用
 description: Node Version Switcher
 date: 2022-04-04 13:01
-update: 2023-03-19 12:33:17
+update: 2023-04-02 21:34
 tags:
   - application
+  - node
+  - nvs
 head:
   - - meta
     - name: keywords

@@ -1,10 +1,16 @@
 ---
-update: 2023-03-19 12:33:17
+update: 2023-04-02 21:34
 title: 给 systemd-boot 设置默认启动项
 description: 安装 windows 和 linux 双系统后, 设置 windows 为默认启动项
 tags:
   - linux
+  - systemd-boot
+  - windows
 date: 2022-10-19 15:35
+head:
+  - - meta
+    - name: keywords
+      content: linux systemd-boot windows
 ---
 update: 2023-03-19 12:33:17
 

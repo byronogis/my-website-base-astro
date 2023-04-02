@@ -2,9 +2,11 @@
 title: Zsh 挑选安装显示node版本号的主题
 description: Zsh 挑选安装显示node版本号的主题
 date: 2022-04-04 19:00
-update: 2022-04-04 19:00
+update: 2023-04-02 21:34
 tags:
   - linux
+  - zsh
+  - node
 head:
   - - meta
     - name: keywords

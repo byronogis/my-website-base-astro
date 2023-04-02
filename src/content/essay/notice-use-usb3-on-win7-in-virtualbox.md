@@ -2,9 +2,11 @@
 title: VirtualBox 中安装win7使用usb3.0设备注意
 description: VirtualBox中安装win7使用usb3.0设备注意.md
 date: 2022-02-26 21:42
-update: 2023-03-19 12:33:17
+update: 2023-04-02 21:34
 tags:
   - application
+  - virtualbox
+  - win7
 head:
   - - meta
     - name: keywords

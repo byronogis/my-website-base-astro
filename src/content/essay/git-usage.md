@@ -2,9 +2,10 @@
 title:  Git 使用初始化
 description: 用户名、用户邮箱、默认分支名称、ssh密钥
 date: 2022-04-03 12:58
-update: 2022-04-03 12:58
+update: 2023-04-02 21:34
 tags:
   - application
+  - git
 head:
   - - meta
     - name: keywords

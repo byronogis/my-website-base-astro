@@ -1,5 +1,5 @@
 import { defineCollection, z } from 'astro:content'
-import { SITE_POST_TAGS } from '~/consts'
+// import { SITE_POST_TAGS } from '~/consts'
 
 const essay = defineCollection({
   schema: z.object({
@@ -9,7 +9,8 @@ const essay = defineCollection({
       .nullable()
       .transform(val => val ?? 'no description'),
     tags: z
-      .enum(SITE_POST_TAGS)
+      // .enum(SITE_POST_TAGS)
+      .string()
       .array()
       .optional(),
     // Transform string to Date object
