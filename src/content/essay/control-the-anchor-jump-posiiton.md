@@ -55,7 +55,7 @@ const target = document.querySelector(hash)
 
 ```js
 window.scrollTo({
-  top: targte.offsetTop - 100, // 这里的 100 为 header 的高度
+  top: target.offsetTop - 100, // 这里的 100 为 header 的高度
   behavior: 'smooth',
 })
 ```
