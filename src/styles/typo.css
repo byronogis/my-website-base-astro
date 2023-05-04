@@ -129,14 +129,14 @@ sub {
   bottom: -0.25em;
 }
 
-/* 让链接在 hover 状态下显示下划线 */
+/* 取消 让链接在 hover 状态下显示下划线 */
 a {
   color: var(--primary-color);
 }
 
-a:hover {
+/* a:hover {
   text-decoration: underline;
-}
+} */
 
 .typo a {
   border-bottom: 1px solid var(--primary-color);
