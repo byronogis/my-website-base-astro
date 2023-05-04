@@ -1,16 +1,12 @@
 :root {
-  --primary-color: #3498DB;
-  --secondary-color1: #FFC300;
-  --secondary-color2: #E74C3C;
+  --primary-color: var(--color-text);
   --color-text: #333333;
   --color-bg: #F5F5F5;
   
 }
 
 :root.dark {
-  --primary-color: #3498DB;
-  --secondary-color1: #FFC300;
-  --secondary-color2: #E74C3C;
+  --primary-color: var(--color-text);
   --color-text: #F8F8FF;
   --color-bg: #1E1E1E;  
 }
