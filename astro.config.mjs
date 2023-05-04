@@ -95,6 +95,8 @@ export default defineConfig({
       ],
       shortcuts: {
         'card-list-item': 'p-4 border shadow hover:shadow-lg transition-all rounded',
+        'opacity-no-hover': 'opacity-60 transition-opacity',
+        'opacity-and-hover': 'opacity-60 hover:opacity-95 transition-opacity',
       },
       safelist: [...dynamicIconsEnum],
       transformers: [UnoCSSTransformerVariantGroup()],

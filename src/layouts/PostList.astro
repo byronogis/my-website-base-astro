@@ -11,9 +11,9 @@ const posts: CollectionEntry<'essay'>[] = Astro.props.posts
     <ul class="p-unset list-none">
       {
         posts.map(post => (
-          <li class="relative flex m-b-2 last:m-b-0 card-list-item  sm:hover:scale-101">
+          <li class="relative flex m-b-2 last:m-b-0 card-list-item  sm:hover:scale-101 opacity-and-hover">
             <FormattedDate
-              class="m-r-8 italic text-[#595959] lt-sm:hidden"
+              class="m-r-8 italic lt-sm:hidden"
               date={post.data.update || post.data.date}
               format={'YYYY-MM-DD'}
             />
