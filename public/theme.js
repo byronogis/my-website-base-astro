@@ -1,54 +1,53 @@
-const primaryColorScheme = ""; // "light" | "dark"
-const colorModeControlSelector = '#toggle-theme'
-
-// Get theme data from local storage
-const currentTheme = localStorage.getItem("theme");
-
+// 获取主题
 function getPreferTheme() {
-  // return theme value in local storage if it is set
-  if (currentTheme) return currentTheme;
+  // 从 localStorage 中获取主题
+  const storageTheme = localStorage.getItem('theme')
+  if (storageTheme !== null) {
+    return storageTheme
+  }
 
-  // return primary color scheme if it is set
-  if (primaryColorScheme) return primaryColorScheme;
-
-  // return user device's prefer color scheme
-  return window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light";
+  // 从系统中获取主题
+  const systemTheme = window.matchMedia('(prefers-color-scheme: dark)')
+  if (systemTheme.matches) {
+    return 'dark'
+  } else {
+    return 'light'
+  }
 }
 
-let themeValue = getPreferTheme();
+// 应用主题
+function applyTheme(theme) {
+  // 设置 localStorage
+  localStorage.setItem('theme', theme)
 
-function setPreference() {
-  localStorage.setItem("theme", themeValue);
-  reflectPreference();
+  // 设置 html 标签的 class
+  // toggle 的第二个参数为 true 时添加 class，为 false 时删除 class
+  document.documentElement.classList.toggle('dark', theme === 'dark')
+  document.documentElement.setAttribute("data-theme", theme);
 }
 
-function reflectPreference() {
-  document.firstElementChild.setAttribute("data-theme", themeValue);
-  document.firstElementChild.classList.toggle('dark', themeValue === 'dark');
-
-  document.querySelector(colorModeControlSelector)?.setAttribute("aria-label", themeValue);
+// 监听系统主题变化
+function watchSystemTheme() {
+  const systemTheme = window.matchMedia('(prefers-color-scheme: dark)')
+  systemTheme.addEventListener('change', e => {
+    const theme = e.matches ? 'dark' : 'light'
+    applyTheme(theme)
+  })
 }
 
-// set early so no page flashes / CSS is made aware
-reflectPreference();
+// 监听页面主题变化(可选, 在页面中切换主题, 如按钮)
+function watchPageTheme() {
+  const themeToggle = document.querySelector('#toggle-theme')
+  themeToggle.addEventListener('click', () => {
+    const theme = getPreferTheme() === 'dark' ? 'light' : 'dark'
+    themeToggle.setAttribute("aria-label", theme);
+    applyTheme(theme)
+  })
+}
 
-window.onload = () => {
-  // set on load so screen readers can get the latest value on the button
-  reflectPreference();
-
-  // now this script can find and listen for clicks on the control
-  document.querySelector(colorModeControlSelector)?.addEventListener("click", () => {
-    themeValue = themeValue === "light" ? "dark" : "light";
-    setPreference();
-  });
-};
-
-// sync with system changes
-window
-  .matchMedia("(prefers-color-scheme: dark)")
-  .addEventListener("change", ({ matches: isDark }) => {
-    themeValue = isDark ? "dark" : "light";
-    setPreference();
-  });
+// 渲染前应用主题, 防止页面闪烁
+applyTheme(getPreferTheme())
+// 监听系统主题变化
+watchSystemTheme()
+// 监听页面主题变化(可选, 在页面中切换主题, 如按钮)
+window.addEventListener('DOMContentLoaded', watchPageTheme)
