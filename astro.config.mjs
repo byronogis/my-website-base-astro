@@ -51,7 +51,7 @@ export default defineConfig({
   // markdown 选项
   markdown: {
     drafts: false, // 草稿页是否应该被包含在最终构建中
-    syntaxHighlight: 'shiki', // 语法高亮器 'shiki' | 'prism' | false
+    syntaxHighlight: 'prism', // 语法高亮器 'shiki' | 'prism' | false
     shikiConfig: {
       theme: 'dracula', //
       langs: [], // 自定义语言（.astro 已内置
