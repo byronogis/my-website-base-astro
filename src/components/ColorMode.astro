@@ -2,7 +2,11 @@
 const { class: className } = Astro.props
 ---
 
-<span class:list={['i-carbon-moon dark:i-carbon-sun', 'components-color-mode', className]}></span>
+<span
+  class:list={['i-carbon-moon dark:i-carbon-sun', 'components-color-mode', className]}
+  id="toggle-theme"
+  aria-label="auto"
+></span>
 
 <script>
   const themeKey = 'theme'

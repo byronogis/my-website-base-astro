@@ -57,4 +57,8 @@ const { title, description, image = '/placeholder-social.jpg', head } = Astro.pr
     return <Fragment set:html={`<${tag} ${propsString} />`}/>
   })
 }
+
+<!-- Theme -->
+<script is:inline src="/theme.js"></script>
+
 <!-- Base Head End -->
