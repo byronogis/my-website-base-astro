@@ -89,6 +89,18 @@ function jumpToHash(hash: string) {
 </script>
 
 <style>
+  /* 显示语言 */
+  .layouts-post-main :global(pre[class^="language-"]) {
+    position: relative;
+  }
+  .layouts-post-main :global(pre[class^="language-"]::after) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    content: attr(class);
+    padding: 0.25em 0.5em;
+    font-size: 0.75em;
+  }
   /* :global(#目录 + p + details > ul) {
     position: sticky;
     z-index: 10;
