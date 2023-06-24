@@ -2,7 +2,7 @@
 title: Arch 安装及初始化配置
 description: UEFI system-boot btrfs  @ @home kde plasma
 date: 2022-05-31 23:28
-update: 2023-03-19 12:33:17
+update: 2023-06-24 16:27
 tags:
   - linux
 head:
@@ -405,6 +405,7 @@ default arch.conf" >> /boot/loader/loader.conf
 echo -e "\
 title Arch Linux
 linux /vmlinuz-linux
+initrd /amd-ucode.img
 initrd /initramfs-linux.img
 options cryptdevice=UUID=`blkid -s UUID -o value /dev/nvme0n1p2`:cryptroot root=/dev/mapper/cryptroot rw rootflags=subvol=@ \c" > /boot/loader/entries/arch.conf
 
