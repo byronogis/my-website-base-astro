@@ -1,5 +1,5 @@
 ---
-update: 2023-04-29 17:23
+update: 2023-07-07 11:23
 title: 让 rclone 开机自动挂载
 description: 让 rclone 开机自动挂载
 date: 2023-04-29 17:15
@@ -52,11 +52,11 @@ After=network-online.target
 
 [Service]
 Type=simple
-User=liamrad
-ExecStartPre=/bin/mkdir -p /home/liamrad/Desktop/obsidian_nutstore
-ExecStart=/usr/bin/rclone mount --vfs-cache-mode full nutstore:/obsidian /home/liamrad/Desktop/obsidian_nutstore
-ExecStop=/usr/bin/fusermount -u /home/liamrad/Desktop/obsidian_nutstore
-ExecStopPost=/bin/rmdir /home/liamrad/Desktop/obsidian_nutstore
+User=byronogis
+ExecStartPre=/bin/mkdir -p /home/byronogis/Desktop/obsidian_nutstore
+ExecStart=/usr/bin/rclone mount --vfs-cache-mode full nutstore:/obsidian /home/byronogis/Desktop/obsidian_nutstore
+ExecStop=/usr/bin/fusermount -u /home/byronogis/Desktop/obsidian_nutstore
+ExecStopPost=/bin/rmdir /home/byronogis/Desktop/obsidian_nutstore
 Restart=on-abort
 
 [Install]

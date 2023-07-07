@@ -26,7 +26,7 @@ export default defineConfig({
   srcDir: './src', // 读取网站的目录（页面，样式，布局，etc）
   publicDir: './public', // 静态资源目录
   outDir: './dist', // 构建写入的目录
-  site: 'https://liamrad.netlify.app', // 最终部署的链接
+  site: 'https://byronogis.netlify.app', // 最终部署的链接
   base: '/', // 部署到的基本路径 **使用 base 选项后你须要更改所有的链接**
   trailingSlash: 'ignore', // 服务器的路由(尾部斜线)匹配行为 'always' | 'never' | 'ignore'
   output: 'static', // 构建输出目标 'static' | 'server'

@@ -10,7 +10,7 @@ export const SITE_NAVIGATION = [
   // { value: 'Project', href: '/project' },
   { value: 'Icons', href: '/icons', pin: false },
   { value: 'About', href: '/about', pin: false },
-  { value: 'Github', href: 'https://github.com/liamrad', external: true, pin: false },
+  { value: 'Github', href: 'https://github.com/byronogis', external: true, pin: false },
 ]
 export const SITE_POST_TAGS: [string, ...string[]] = [
   'no tags',
