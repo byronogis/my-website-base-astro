@@ -3,7 +3,9 @@ import type { CollectionEntry } from 'astro:content'
 import DefaultLayout from '~/layouts/Default.astro'
 import FormattedDate from '~/components/FormattedDate.astro'
 
-const posts: CollectionEntry<'essay'>[] = Astro.props.posts
+type Post = CollectionEntry<'essay'> | CollectionEntry<'manual'>
+
+const posts: Post[] = Astro.props.posts
 ---
 
 <DefaultLayout>
@@ -19,7 +21,7 @@ const posts: CollectionEntry<'essay'>[] = Astro.props.posts
             />
             <a
               class="flex-auto"
-              href={`/essay/detail/${post.slug}/`}
+              href={`/${post.collection}/detail/${post.slug}/`}
             >{post.data.title}</a>
             <ul class="flex absolute bottom-0 right-0">
               {post.data.tags?.map(tag => (
