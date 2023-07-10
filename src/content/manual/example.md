@@ -1,9 +1,9 @@
 ---
-update: 2023-07-10 15:46
+update: 2023-07-10 15:59
 title: example
 description: example
 date: 2023-03-26 22:00
-tags: [astro]
+tags: [astro, manual]
 head:
   - - meta
     - name: keywords
