@@ -1,0 +1,12 @@
+---
+import { getCollection } from 'astro:content'
+import PostListLayout from '~/layouts/PostList.astro'
+
+const posts = (await getCollection('manual')).sort((a, b) => {
+  const aDate = a.data.update || a.data.date
+  const bDate = b.data.update || b.data.date
+  return bDate.valueOf() - aDate.valueOf()
+})
+---
+
+<PostListLayout posts={posts}></PostListLayout>
