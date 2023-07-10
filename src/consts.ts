@@ -7,7 +7,7 @@ export const SITE_NAVIGATION = [
   { value: 'Home', href: '/', pin: false },
   { value: 'Essay', href: '/essay', pin: true },
   { value: 'Manual', href: '/manual', pin: true },
-  { value: 'Tags', href: '/tags', pin: false },
+  { value: 'Tag', href: '/tag', pin: false },
   // { value: 'Project', href: '/project' },
   { value: 'Icons', href: '/icons', pin: false },
   { value: 'About', href: '/about', pin: false },

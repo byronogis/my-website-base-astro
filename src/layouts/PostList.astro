@@ -24,7 +24,7 @@ const posts: CollectionEntry<'essay'>[] = Astro.props.posts
             <ul class="flex absolute bottom-0 right-0">
               {post.data.tags?.map(tag => (
                 <li class="p-x-1 text-3.2">
-                  <a class="text-gray-400 hover:text-gray-700" href={`/essay/tag/${tag}`}>{tag}</a>
+                  <a class="text-gray-400 hover:text-gray-700" href={`/tag/${tag}`}>{tag}</a>
                 </li>
               ))}
             </ul>
