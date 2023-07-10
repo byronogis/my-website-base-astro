@@ -8,7 +8,6 @@ specifiers:
   '@astrojs/sitemap': ^1.2.1
   '@astrojs/vue': ^2.1.0
   '@iconify-json/carbon': ^1.1.16
-  '@types/wordcloud': ^1.2.0
   '@typescript-eslint/parser': ^5.55.0
   '@unocss/astro': ^0.50.6
   '@unocss/preset-icons': ^0.50.6
@@ -26,7 +25,6 @@ specifiers:
   remark-collapse: ^0.1.2
   remark-toc: ^8.0.1
   vue: ^3.2.30
-  wordcloud: ^1.2.2
 
 dependencies:
   '@astrojs/mdx': 0.17.2_astro@2.1.3
@@ -41,12 +39,10 @@ dependencies:
   remark-collapse: 0.1.2
   remark-toc: 8.0.1
   vue: 3.2.47
-  wordcloud: 1.2.2
 
 devDependencies:
   '@antfu/eslint-config': 0.36.0_eslint@8.36.0
   '@iconify-json/carbon': 1.1.16
-  '@types/wordcloud': 1.2.0
   '@typescript-eslint/parser': 5.55.0_eslint@8.36.0
   '@unocss/astro': 0.50.6
   '@unocss/preset-icons': 0.50.6
@@ -1235,10 +1231,6 @@ packages:
 
   /@types/unist/2.0.6:
     resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}
-
-  /@types/wordcloud/1.2.0:
-    resolution: {integrity: sha512-s6wZ7eIi+CBSdsjZwp0yVmL8G8+Eo1vumv/NVUjRtClGtxx+o1S74+PbYZmqp7hAIvRcOazdviQ6qeijxuXfKw==}
-    dev: true
 
   /@types/yargs-parser/21.0.0:
     resolution: {integrity: sha512-iO9ZQHkZxHn4mSakYV0vFHAVDyEOIJQrV2uZ06HxEPcx+mt8swXoZHIbaaJ2crJYFfErySgktuTZ3BeLz+XmFA==}
@@ -6314,10 +6306,6 @@ packages:
     resolution: {integrity: sha512-Hz/mrNwitNRh/HUAtM/VT/5VH+ygD6DV7mYKZAtHOrbs8U7lvPS6xf7EJKMF0uW1KJCl0H701g3ZGus+muE5vQ==}
     engines: {node: '>=0.10.0'}
     dev: true
-
-  /wordcloud/1.2.2:
-    resolution: {integrity: sha512-fUnDsGrHXou+49j1OeKaC7nOeZPx+sWjIet0L/j6eAcm0nXy+a+AuUs/iDAX4PLBg1Zc6wgXWXhoXdQsXRWAEw==}
-    dev: false
 
   /wrap-ansi/8.1.0:
     resolution: {integrity: sha512-si7QWI6zUMq56bESFvagtmzMdGOtoxfR+Sez11Mobfc7tm+VkUckk9bW2UeffTGVUbOksxmSw0AA2gs8g71NCQ==}

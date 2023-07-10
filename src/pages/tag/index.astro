@@ -17,71 +17,23 @@ const tagsCount = posts.reduce((acc, post) => {
 ---
 
 <DefaultLayout>
-  <div
-    style="height: 500px"
-    id="wordcloud"
-    data-tags-count={JSON.stringify(tagsCount)}>
-  </div>
+  <ul class="pages-tag-tag_list flex flex-row flex-wrap justify-center items-center">
+    {Object.entries(tagsCount).map(([tag, count]) => (
+      <li
+        class:list={[
+          'pages-tag-tag_item',
+          'py-[0.25rem] px-[0.5rem] text-[var(--color-text)]',
+          'lt-sm:leading-[1.2] leading-[1.5] hover:underline',
+        ]}
+        style={{ '--tag-step': Math.ceil(count / 1) }}>
+        <a href={`/tag/${tag}`}>{tag}</a>
+      </li>
+    ))}
+  </ul>
 </DefaultLayout>
 
-<script>
-import WordCloud from 'wordcloud'
-const el = document.getElementById('wordcloud') as HTMLDivElement
-const tagsCount = JSON.parse(el.dataset.tagsCount as string) as Record<string, number>
-
-const isDark = document.documentElement.classList.contains('dark')
-
-const options = {
-  list: Object.entries(tagsCount),
-  // fontFamily: 'Finger Paint, cursive, sans-serif',
-  // fontWeight: 'normal',
-  color: isDark ? 'random-light' : 'random-dark',
-  classes: 'wordcloud',
-  minSize: 10,
-  weightFactor: 20,
-  clearCanvas: true,
-  // backgroundColor: '#001f00',
-
-  gridSize: 12,
-  // origin: [0, 0],
-  drawOutOfBound: false,
-  shrinkToFit: true,
-
-  // drawMask: true,
-  maskColor: 'rgba(255, 255, 255, 0.6)',
-  maskGapWidth: 0.1,
-
-  // wait: 100,
-  // abortThreshold: 0,
-  abort: () => false,
-
-  minRotation: -Math.PI / 2,
-  maxRotation: Math.PI / 2,
-  rotationSteps: 2,
-
-  shuffle: true,
-  rotateRatio: 0.2,
-
-  shape: 'circle',
-  ellipticity: 0.65,
-
-  // hover: (item, dimension, event) => {}
-  click(item: any) {
-    window.open(`/tag/${item[0]}`, '_self')
-  },
-}
-WordCloud(el, options)
-</script>
-
-<style is:global>
-  #wordcloud {
-    background-color: var(--color-bg) !important;
-  }
-  .wordcloud:hover {
-    text-decoration:underline;
-  }
-  .wordcloud {
-    cursor: pointer;
-    background-color: transparent;
+<style>
+  .pages-tag-tag_item {
+    font-size: calc(var(--tag-step, 1) * 0.2rem + 1rem);
   }
 </style>
