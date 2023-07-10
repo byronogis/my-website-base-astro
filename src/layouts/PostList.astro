@@ -1,11 +1,9 @@
 ---
-import type { CollectionEntry } from 'astro:content'
 import DefaultLayout from '~/layouts/Default.astro'
 import FormattedDate from '~/components/FormattedDate.astro'
+import type { PostCollectionEntry } from '~/types'
 
-type Post = CollectionEntry<'essay'> | CollectionEntry<'manual'>
-
-const posts: Post[] = Astro.props.posts
+const posts: PostCollectionEntry[] = Astro.props.posts
 ---
 
 <DefaultLayout>

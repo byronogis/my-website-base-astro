@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content'
 import DefaultLayout from '~/layouts/Default.astro'
 
-const posts = await getCollection('essay')
+const posts = (await Promise.all([getCollection('essay'), getCollection('manual')])).flat(1)
 
 const tagsCount = posts.reduce((acc, post) => {
   post.data.tags?.forEach(tag => {

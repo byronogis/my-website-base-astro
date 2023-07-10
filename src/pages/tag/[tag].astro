@@ -1,10 +1,10 @@
 ---
-import type { CollectionEntry } from 'astro:content'
 import { getCollection } from 'astro:content'
 import PostListLayout from '~/layouts/PostList.astro'
+import type { PostCollectionEntry } from '~/types'
 
 export async function getStaticPaths() {
-  const posts = await getCollection('essay')
+  const posts = (await Promise.all([getCollection('essay'), getCollection('manual')])).flat(1)
 
   const tagsMap = posts.reduce((acc, post) => {
     post.data.tags?.forEach(tag => {
@@ -14,7 +14,7 @@ export async function getStaticPaths() {
       acc[tag].push(post)
     })
     return acc
-  }, {} as Record<string, CollectionEntry<'essay'>[]>)
+  }, {} as Record<string, PostCollectionEntry[]>)
 
   return Object.keys(tagsMap).map(tag => {
     tagsMap[tag].sort((a, b) => {
@@ -30,6 +30,6 @@ export async function getStaticPaths() {
   })
 }
 
-const posts: CollectionEntry<'essay'>[] = Astro.props.posts
+const posts: PostCollectionEntry[] = Astro.props.posts
 ---
 <PostListLayout posts={posts}></PostListLayout>
