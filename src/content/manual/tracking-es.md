@@ -1,5 +1,5 @@
 ---
-update: 2023-07-12 18:01
+update: 2023-07-12 18:24
 title: ECMAScript 新特性记录
 description: ECMAScript 新特性记录
 date: 2023-07-12 09:50
@@ -12,6 +12,28 @@ head:
 ---
 
 ## 目录
+
+## 背景
+
+TC39 是一个由各大浏览器厂商、JavaScript 引擎厂商、各大技术社区、各大技术公司、各大高校、各大研究机构等组成的委员会, 负责制定 ECMAScript 标准.
+
+### 标准修订和日程安排
+
+> [The TC39 Process](https://tc39.es/process-document/)
+
+TC39 打算在每年 7 月向 ECMA 大会提交一份规范以供批准. 以下是制定新规范的大致时间表:
+
+- 2月1日: 生成候选草案.
+- 2月-3月: 60天免版税退出期.
+- 3月 TC39 会议: 第 4 阶段提案被合并, 最终语义被批准, 新的规范版本从 master 分支出来. 从这时起, 只接受编辑更改.
+- 4月-6月: ECMA CC 和 ECMA GA 审查期.
+- 7月: ECMA 大会批准新标准.
+
+### 已完成的提案
+
+> [Finished Proposals](https://github.com/tc39/proposals/blob/main/finished-proposals.md)
+
+已完成的提案是已经达到第 4 阶段的提案, 并包含在规范的[最新草案](https://tc39.es/ecma262/)中.
 
 ## ECMAScript 2015(ES6)
 
