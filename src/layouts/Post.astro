@@ -81,8 +81,8 @@ window.addEventListener('load', () => {
 function jumpToHash(hash: string) {
   const target = document.getElementById(hash) || document.getElementsByName(hash)[0]
   window.scrollTo({
-    top: target?.offsetTop - 100,
-    left: 100,
+    top: target?.offsetTop - 64,
+    left: 0,
     behavior: 'smooth',
   })
 }
