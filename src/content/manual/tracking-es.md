@@ -1,5 +1,5 @@
 ---
-update: 2023-07-12 18:24
+update: 2023-07-13 16:40
 title: ECMAScript 新特性记录
 description: ECMAScript 新特性记录
 date: 2023-07-12 09:50
@@ -51,14 +51,23 @@ TC39 打算在每年 7 月向 ECMA 大会提交一份规范以供批准. 以下�
 ## ECMAScript 2016(ES7)
 
 - `Array.prototype.includes`
+  - `Array.prototype.includes`
+  - `TypedArray.prototype.includes`
 - 指数运算符: `**`
 
 ### `Array.prototype.includes`
 
 > [提议](https://github.com/tc39/proposal-Array.prototype.includes) |
+
+#### `Array.prototype.includes`
+
 > [规范](https://tc39.es/ecma262/multipage/indexed-collections.html#sec-array.prototype.includes) | 
 > [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes) |
 
+#### `TypedArray.prototype.includes`
+
+> [规范](https://tc39.es/ecma262/multipage/indexed-collections.html#sec-%typedarray%.prototype.includes) |
+> [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/includes) |
 
 ### 指数运算符
 
@@ -159,17 +168,17 @@ TC39 打算在每年 7 月向 ECMA 大会提交一份规范以供批准. 以下�
 
 ### `s`(`dotAll`) flag for regular expressions
 
+> [提议](https://github.com/tc39/proposal-regexp-dotall-flag) |
+
 使用 `s` 修饰符, `.` 可以匹配任意字符, 包括换行符(`\n`)
 
 #### 修饰符: `s`
 
-> [提议](https://github.com/tc39/proposal-regexp-dotall-flag) |
 > [规范](https://tc39.es/ecma262/multipage/text-processing.html#sec-regexpinitialize) |
 > [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/RegExp) |
 
 #### `RegExp.prototype.dotAll`
 
-> [提议](https://github.com/tc39/proposal-regexp-dotall-flag) |
 > [规范](https://tc39.es/ecma262/#sec-get-regexp.prototype.dotAll) |
 > [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/dotAll) |
 
@@ -320,8 +329,8 @@ TC39 打算在每年 7 月向 ECMA 大会提交一份规范以供批准. 以下�
 - `Promise.allSettled`
 - `globalThis`
 - `for-in` mechanics
-- Optional chaining
-- Nullish coalescing Operator
+- Optional chaining: 可选链运算符
+- Nullish coalescing Operator: 空值合并运算符
 - `import.meta`
 
 ### `String.prototype.matchAll`
@@ -330,34 +339,294 @@ TC39 打算在每年 7 月向 ECMA 大会提交一份规范以供批准. 以下�
 > [规范](https://tc39.es/ecma262/#sec-string.prototype.matchall) |
 > [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/matchAll) |
 
+### `import()`
+
+> [提议](https://github.com/tc39/proposal-dynamic-import) |
+> [规范](https://tc39.es/ecma262/multipage/ecmascript-language-expressions.html#sec-import-calls) |
+> [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import) |
+
+### `BigInt`
+
+> [提议](https://github.com/tc39/proposal-bigint) |
+> [规范](https://tc39.es/ecma262/multipage/numbers-and-dates.html#sec-bigint-objects) |
+> [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt) |
+
+### `Promise.allSettled`
+
+> [提议](https://github.com/tc39/proposal-promise-allSettled) |
+> [规范](https://tc39.es/ecma262/#sec-promise.allsettled) |
+> [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled) |
+
+### `globalThis`
+
+> [提议](https://github.com/tc39/proposal-global) |
+> [规范](https://tc39.es/ecma262/#sec-globalthis) |
+> [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/globalThis) |
+
+### `for-in` mechanics
+
+> [提议](https://github.com/tc39/proposal-for-in-order) |
+> [规范](https://tc39.es/ecma262/#sec-enumerate-object-properties) |
+> [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in#enumeration_order) |
+
+### Optional chaining
+
+> [提议](https://github.com/tc39/proposal-optional-chaining) |
+> [规范](https://tc39.es/ecma262/multipage/ecmascript-language-expressions.html#prod-OptionalExpression) |
+> [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining) |
+
+### Nullish coalescing Operator
+
+> [提议](https://github.com/tc39/proposal-nullish-coalescing) |
+> [规范](https://tc39.es/ecma262/multipage/ecmascript-language-expressions.html#prod-CoalesceExpression) |
+> [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator) |
+
+### `import.meta`
+
+> [提议](https://github.com/tc39/proposal-import-meta) |
+> [规范](https://tc39.es/ecma262/multipage/ecmascript-language-expressions.html#prod-ImportMeta) |
+> [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import.meta) |
+
 
 ## ECMAScript 2021(ES12)
 
 - `String.prototype.replaceAll`
 - `Promise.any`
 - WeakRefs
-- Logical Assignment Operators
-- Numeric Separators
+- Logical Assignment Operators: 逻辑赋值操作符
+  - `&&=`
+  - `||=`
+  - `??=`
+- Numeric Separators: 数字分隔符
+
+### `String.prototype.replaceAll`
+
+> [提议](https://github.com/tc39/proposal-string-replaceall) |
+> [规范](https://tc39.es/ecma262/#sec-string.prototype.replaceall) |
+> [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll) |
+
+### `Promise.any`
+
+> [提议](https://github.com/tc39/proposal-promise-any) |
+> [规范](https://tc39.es/ecma262/#sec-promise.any) |
+> [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/any) |
+
+### WeakRefs
+
+> [提议](https://github.com/tc39/proposal-weakrefs) |
+> [规范](https://tc39.es/ecma262/#sec-weak-ref-objects) |
+> [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakRef) |
+
+### Logical Assignment Operators
+
+> [提议](https://github.com/tc39/proposal-logical-assignment) |
+> [规范](https://tc39.es/ecma262/#sec-assignment-operators) |
+
+#### `&&=`
+
+> [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND_assignment)
+
+#### `||=`
+
+> [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_OR_assignment)
+
+#### `??=`
+
+> [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator#logical_nullish_assignment)
+
+### Numeric Separators
+
+> [提议](https://github.com/tc39/proposal-numeric-separator) |
+> [规范](https://tc39.es/ecma262/#sec-literals-numeric-literals) |
+> [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#numeric_separators) |
 
 ## ECMAScript 2022(ES13)
 
 - Class Fields
+  - Field declarations(Public fields)
+  - Private fields
 - RegExp Match Indices
+  - 修饰符 `d`
+  - `RegExp.prototype.hasIndices`
 - Top-level `await`
 - Ergonomic brand checks for private fields
 - `.at()`
-- Accessible `Object.prototype.hasOwnProperty`
+  - `String.prototype.at`
+  - `Array.prototype.at`
+  - `TypedArray.prototype.at`
+- Accessible `Object.prototype.hasOwnProperty`: `Object.hasOwn`
 - Class Static Block
 - Error Cause
 
-## ECMAScript 2023(ES14)
+### Class Fields
+
+> [提议](https://github.com/tc39/proposal-class-fields) |
+
+#### Field declarations(Public fields)
+
+> [规范](https://tc39.es/ecma262/#prod-FieldDefinition) |
+> [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Public_class_fields) |
+
+#### Private fields
+
+> [规范](https://tc39.es/ecma262/#prod-PrivateIdentifier) |
+> [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_class_fields) |
+
+### RegExp Match Indices
+
+> [提议](https://github.com/tc39/proposal-regexp-match-indices) |
+
+#### 修饰符 `d`
+
+#### `RegExp.prototype.hasIndices`
+
+> [规范](https://tc39.es/ecma262/multipage/text-processing.html#sec-get-regexp.prototype.hasIndices) |
+> [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/hasIndices) |
+
+### Top-level `await`
+
+> [提议](https://github.com/tc39/proposal-top-level-await) |
+> [规范](https://tc39.es/ecma262/multipage/ecmascript-language-functions-and-classes.html#prod-AwaitExpression) |
+> [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await#top_level_await) |
+
+### Ergonomic brand checks for private fields
+
+> [提议](https://github.com/tc39/proposal-private-fields-in-in) |
+> [规范](https://tc39.es/ecma262/multipage/ecmascript-language-expressions.html#sec-relational-operators) |
+> [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/in#using_the_in_operator_to_implement_branded_checks) |
+
+使 `in` 操作符可以用于检查私有字段
+
+### `.at()`
+
+> [提议](https://github.com/tc39/proposal-relative-indexing-method) |
+
+#### `String.prototype.at`
+
+> [规范](https://tc39.es/ecma262/#sec-string.prototype.at) |
+> [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/at) |
+
+#### `Array.prototype.at`
+
+> [规范](https://tc39.es/ecma262/#sec-array.prototype.at) |
+> [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/at) |
+
+#### `TypedArray.prototype.at`
+
+> [规范](https://tc39.es/ecma262/#sec-%typedarray%.prototype.at) |
+> [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/at) |
+
+### Accessible `Object.prototype.hasOwnProperty`: `Object.hasOwn`
+
+> [提议](https://github.com/tc39/proposal-accessible-object-hasownproperty) |
+> [规范](https://tc39.es/ecma262/#sec-object.hasown) |
+> [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwn) |
+
+### Class Static Block
+
+> [提议](https://github.com/tc39/proposal-class-static-block) |
+> [规范](https://tc39.es/ecma262/multipage/ecmascript-language-functions-and-classes.html#prod-ClassStaticBlock) |
+> [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Static_initialization_blocks) |
+
+### Error Cause
+
+> [提议](https://github.com/tc39/proposal-error-cause) |
+> [规范](https://tc39.es/ecma262#sec-installerrorcause) |
+> [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error/cause) |
+
+## ECMAScript 2023(ES14) Coming
 
 - Array find from last
+  - `Array.prototype.findLast`
+  - `Array.prototype.findLastIndex`
+  - `TypedArray.prototype.findLast`
+  - `TypedArray.prototype.findLastIndex`
 - Hashbang Grammar
 - Symbols as WeakMap keys
 - Change Array by Copy
+  - `Array.prototype.toReversed`
+  - `Array.prototype.toSorted`
+  - `Array.prototype.toSpliced`
+  - `Array.prototype.with`
+  - `TypedArray.prototype.toReversed`
+  - `TypedArray.prototype.toSorted`
+  - `TypedArray.prototype.with`
 
-## ECMAScript 2024(ES15)
+### Array find from last
+
+> [提议](https://github.com/tc39/proposal-array-find-from-last) |
+
+#### `Array.prototype.findLast`
+
+> [规范](https://tc39.es/ecma262/#sec-array.prototype.findlast) |
+> [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findLast) |
+
+#### `Array.prototype.findLastIndex`
+
+> [规范](https://tc39.es/ecma262/#sec-array.prototype.findlastindex) |
+> [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findLastIndex) |
+
+#### `TypedArray.prototype.findLast`
+
+> [规范](https://tc39.es/ecma262/#sec-%typedarray%.prototype.findlast) |
+> [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/findLast) |
+
+#### `TypedArray.prototype.findLastIndex`
+
+> [规范](https://tc39.es/ecma262/#sec-%typedarray%.prototype.findlastindex) |
+> [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/findLastIndex) |
+
+### Hashbang Grammar
+
+> [提议](https://github.com/tc39/proposal-hashbang) |
+> [规范](https://tc39.es/ecma262/multipage/ecmascript-language-lexical-grammar.html#sec-hashbang) |
+> [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#hashbang_comments) |
+
+### Symbols as WeakMap keys
+
+> [提议](https://github.com/tc39/proposal-symbols-as-weakmap-keys) |
+> [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol#well-known_symbols) |
+
+### Change Array by Copy
+
+> [提议](https://github.com/tc39/proposal-change-array-by-copy) |
+
+#### `Array.prototype.toReversed`
+
+> [规范](https://tc39.es/ecma262/#sec-array.prototype.toreversed) |
+> [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toReversed) |
+
+#### `Array.prototype.toSorted`
+
+> [规范](https://tc39.es/ecma262/#sec-array.prototype.tosorted) |
+> [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toSorted) |
+
+#### `Array.prototype.toSpliced`
+
+> [规范](https://tc39.es/ecma262/#sec-array.prototype.tospliced) |
+> [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toSpliced) |
+
+#### `Array.prototype.with`
+
+> [规范](https://tc39.es/ecma262/#sec-array.prototype.with) |
+> [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/with) |
+
+#### `TypedArray.prototype.toReversed`
+
+> [规范](https://tc39.es/ecma262/#sec-%typedarray%.prototype.toreversed) |
+> [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/toReversed) |
+
+#### `TypedArray.prototype.toSorted`
+
+> [规范](https://tc39.es/ecma262/#sec-%typedarray%.prototype.tosorted) |
+> [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/toSorted) |
+
+#### `TypedArray.prototype.with`
+
+> [规范](https://tc39.es/ecma262/#sec-%typedarray%.prototype.with) |
+> [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/with) |
+
+## ECMAScript 2024(ES15) Coming
 
 - Well-Formed Unicode Strings
 - `Atomics.waitAsync`
