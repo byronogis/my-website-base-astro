@@ -70,7 +70,7 @@ window.addEventListener('load', () => {
     return
   }
 
-  const hashSource = location.hash.slice(1)
+  const hashSource = location.hash.slice(1).replace(/^toc-/, '')
   const hash = decodeURIComponent(hashSource).toLowerCase()
 
   setTimeout(() => {
