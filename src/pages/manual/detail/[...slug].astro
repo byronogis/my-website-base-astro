@@ -12,7 +12,11 @@ export async function getStaticPaths() {
 }
 
 const post: CollectionEntry<'manual'> = Astro.props.post
-const { Content } = await post.render()
+const {
+  Content,
+  // ...rest
+} = await post.render()
+// console.log(rest.headings)
 ---
 
 <PostLayout {...post.data}>
