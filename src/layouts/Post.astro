@@ -46,19 +46,25 @@ const { title, description, date, update, heroImage, heroImageAlt, head, tags } 
 <script>
 document.querySelector('.layouts-post-main')?.addEventListener(
   'click',
-  event => {
+  (event: any) => {
+    event._target = event.target
+
+    if (event.target.tagName === 'CODE') {
+      event._target = event.target.parentElement
+    }
+
     if (
-      event.target
-      && event.target instanceof HTMLAnchorElement
-      && event.target.hash.slice(1).match(/^toc-/)
+      event._target
+      && event._target instanceof HTMLAnchorElement
+      && event._target.hash.slice(1).match(/^toc-/)
     ) {
       event.preventDefault()
 
-      const hashSource = event.target.hash.slice(1).replace(/^toc-/, '')
+      const hashSource = event._target.hash.slice(1).replace(/^toc-/, '')
       const hash = decodeURIComponent(hashSource).toLowerCase()
 
-      event.target.hash = hash
-      history.pushState(null, '', event.target.href)
+      event._target.hash = hash
+      history.pushState(null, '', event._target.href)
 
       jumpToHash(hash)
     }
