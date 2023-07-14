@@ -11,6 +11,7 @@ import vue from '@astrojs/vue'
 // remark plugin
 import remarkToc from 'remark-toc'
 import remarkCollapse from 'remark-collapse'
+import remarkHeadingNumbering from 'remark-heading-numbering'
 
 // resolve dynamic icon of unocss
 // https://github.com/unocss/unocss/issues/1976
@@ -58,13 +59,14 @@ export default defineConfig({
       wrap: true, // 换行以阻止水平滚动条
     }, // shiki 语法高亮配配置
     remarkPlugins: [
+      remarkHeadingNumbering,
       [remarkToc, {
-        heading: 'toc|table[ -]of[ -]contents?|目录',
+        heading: 'toc|table[ -]of[ -]contents?|目录'.split('|').map(i => `(\\d+(\\.\\d+)*( )*)?${i}`).join('|'),
         tight: true,
         prefix: 'toc-',
       }],
       [remarkCollapse, {
-        test: 'toc|table[ -]of[ -]contents?|目录',
+        test: 'toc|table[ -]of[ -]contents?|目录'.split('|').map(i => `(\\d+(\\.\\d+)*( )*)?${i}`).join('|'),
         summary: '目录',
       }],
     ],
