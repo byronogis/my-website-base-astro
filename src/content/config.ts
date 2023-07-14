@@ -24,6 +24,7 @@ const basicSchemaObject = {
     .transform(val => val ? new Date(val) : undefined),
   //
   heroImage: z.string().optional(),
+  heroImageAlt: z.string().optional(),
   head: z
     .tuple([z.string(), z.record(z.string(), z.string())])
     .array()
